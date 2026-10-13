@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel&logoColor=white)](https://equero.dev)
-[![Version](https://img.shields.io/badge/version-1.3.0-green.svg)](https://github.com/hbeneke/personal-site)
+[![Version](https://img.shields.io/badge/version-1.3.0-green.svg)](https://github.com/equero/personal-site)
 
 A modern, fast, and SEO-optimized personal portfolio website built with Astro, featuring a blog, portfolio showcase, and interactive resume.
 
@@ -41,7 +41,7 @@ This project leverages modern web technologies:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/hbeneke/personal-site.git
+   git clone https://github.com/equero/personal-site.git
    cd personal-site
    ```
 
@@ -52,8 +52,6 @@ This project leverages modern web technologies:
    # or
    pnpm install
    ```
-
-   This will automatically install Git hooks for version management. See [Git Hooks](#git-hooks) section for details.
 
 1. Start the development server:
 
@@ -93,30 +91,17 @@ npm run lint
 pnpm lint
 ```
 
-## Git Hooks
+## Releases
 
-The project includes automated Git hooks for version management:
-
-### Available Hooks
-
-- **pre-commit**: Automatically increments the patch version (e.g., 1.0.0 → 1.0.1) when committing non-markdown files
-- **post-merge**: Automatically increments the minor version (e.g., 1.0.5 → 1.1.0) when merging `develop` into `master`
-
-### Installation
-
-Hooks are automatically installed when you run `npm install`. To manually install or reinstall:
+Work happens on `develop`; `master` holds releases. Releases are done with [synkro](https://github.com/equero/synkro):
 
 ```bash
-npm run hooks:install
+synkro status                  # what the next release would contain
+synkro sync --patch --dry-run  # show what would happen, change nothing
+synkro sync --patch            # merge develop into master, bump patch, tag, push
 ```
 
-To uninstall hooks:
-
-```bash
-npm run hooks:uninstall
-```
-
-For more details, see [`.githooks/README.md`](./.githooks/README.md).
+Each release is a single merge commit on `master` that also carries the new version, tagged `vX.Y.Z` with a changelog. `develop` is fast-forwarded to it afterwards.
 
 ## Project Structure
 
@@ -132,12 +117,12 @@ For more details, see [`.githooks/README.md`](./.githooks/README.md).
 │   ├── styles/          # Global styles and CSS
 │   ├── types/           # TypeScript type definitions
 │   └── utils/           # Utility functions
-├── scripts/             # Build and automation scripts (see scripts/README.md)
+├── scripts/             # Build scripts (see scripts/README.md)
 ├── tests/               # Unit tests
 └── astro.config.mjs     # Astro configuration
 ```
 
-For detailed information about build and automation scripts, see [`scripts/README.md`](./scripts/README.md).
+For detailed information about build scripts, see [`scripts/README.md`](./scripts/README.md).
 
 ## Contributing
 
@@ -185,7 +170,7 @@ Under the conditions that:
 
 ## Author
 
-[@hbeneke](https://github.com/hbeneke)
+[@equero](https://github.com/equero)
 
 ## Acknowledgments
 
