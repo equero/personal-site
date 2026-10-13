@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
   siteUrl: "https://equero.dev",
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/equerodev/",
-    github: "https://www.github.com/hbeneke",
+    github: "https://www.github.com/equero",
     x: "https://x.com/habakukbeneke",
   },
   // Contact information and availability
