@@ -10,8 +10,17 @@ demo: "https://www.kickcaps.com"
 featured: false
 status: "wip"
 order: 6
-version: "0.3.23"
+version: "0.3.28"
 changelog:
+  - version: "0.3.28"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
+  - version: "0.3.27"
+    date: "2026-09-25T00:00:00.000Z"
+    changes:
+      - "The live match list on the home page no longer refreshes every 20 seconds; a reload button in its header fetches it on demand"
+      - "Opening a match or following its live updates no longer writes anything to the server, so pauses and abandonments are settled only by players' own actions"
   - version: "0.3.23"
     date: "2026-09-25T00:00:00.000Z"
     changes:
