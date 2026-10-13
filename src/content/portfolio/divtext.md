@@ -4,14 +4,18 @@ date: "2026-06-08T00:00:00.000Z"
 description: "Turn any word into a logo built entirely from <div> cells. A terminal-style playground that draws your text on a grid, cell by cell."
 technologies: ["TypeScript", "HTML", "CSS"]
 logo: "/portfolio/logos/divtext.svg"
-github: "https://github.com/hbeneke/divtext"
+github: "https://github.com/equero/divtext"
 demo: "https://divtext.com"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 4
-version: "1.1.19"
+version: "1.1.20"
 changelog:
+  - version: "1.1.20"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
   - version: "1.1.19"
     date: "2026-08-07T00:00:00.000Z"
     changes:

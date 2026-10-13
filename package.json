@@ -1,6 +1,6 @@
 {
   "name": "@habakukbeneke/personal-site",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "My digital portfolio built with Astro and Tailwind CSS, highlighting my development expertise and professional journey.",
   "author": {
     "name": "Enrique Quero Vilar",
@@ -21,11 +21,11 @@
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hbeneke/personal-site.git"
+    "url": "git+ssh://git@github.com/equero/personal-site.git"
   },
-  "homepage": "https://github.com/hbeneke/personal-site#readme",
+  "homepage": "https://github.com/equero/personal-site#readme",
   "bugs": {
-    "url": "https://github.com/hbeneke/personal-site/issues"
+    "url": "https://github.com/equero/personal-site/issues"
   },
   "scripts": {
     "dev": "astro dev",
@@ -36,11 +36,7 @@
     "test": "vitest --ui",
     "coverage": "vitest run --coverage",
     "lint": "biome lint .",
-    "search:build": "node scripts/build-search.mjs",
-    "hooks:install": "node scripts/install-hooks.mjs",
-    "hooks:uninstall": "node scripts/uninstall-hooks.mjs",
-    "sync:master": "node scripts/sync-master.mjs",
-    "prepare": "node scripts/install-hooks.mjs"
+    "search:build": "node scripts/build-search.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

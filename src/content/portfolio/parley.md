@@ -4,7 +4,7 @@ date: "2026-06-29T00:00:00.000Z"
 description: "My personal library of reusable components, built with native Web Components so I can drop them into any of my apps. Free software, released under the GNU GPL."
 technologies: ["TypeScript", "Web Components", "npm"]
 logo: "/portfolio/logos/parley.svg"
-github: "https://github.com/hbeneke/parley"
+github: "https://github.com/equero/parley"
 demo: "https://www.npmjs.com/package/@hbeneke/parley"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"

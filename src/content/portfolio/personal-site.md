@@ -5,14 +5,25 @@ description: "My personal website and blog built with Astro. A place to showcase
 technologies: ["Astro", "TypeScript", "Tailwind CSS", "Vitest", "Vercel"]
 link: "https://equero.dev"
 logo: "/portfolio/logos/personal-site.svg"
-github: "https://github.com/hbeneke/personal-site"
+github: "https://github.com/equero/personal-site"
 demo: "https://equero.dev"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.7.0"
+version: "1.7.2"
 changelog:
+  - version: "1.7.2"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
+      - "GitHub links moved from hbeneke to equero"
+      - "Brought the changelogs of every project up to date"
+      - "Added Synkro to the portfolio"
+  - version: "1.7.1"
+    date: "2026-10-09T00:00:00.000Z"
+    changes:
+      - "Added Springtail to the portfolio"
   - version: "1.7.0"
     date: "2026-09-21T00:00:00.000Z"
     changes:

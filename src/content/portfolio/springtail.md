@@ -4,14 +4,18 @@ date: "2026-10-09T00:00:00.000Z"
 description: "Follow the logs of a Maven / Spring Boot backend live in the browser. Watch the log file of an app you started yourself, or pipe its console in, and filter the noise away."
 technologies: ["TypeScript", "Node.js", "Server-Sent Events"]
 logo: "/portfolio/logos/springtail.svg"
-github: "https://github.com/hbeneke/springtail"
+github: "https://github.com/equero/springtail"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 status: "wip"
 order: 7
-version: "0.1.0"
+version: "0.1.1"
 changelog:
+  - version: "0.1.1"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
   - version: "0.1.0"
     date: "2026-10-09T00:00:00.000Z"
     changes:

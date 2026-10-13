@@ -5,15 +5,24 @@ description: "Visualize the evolution of any GitHub repository. Git history anal
 technologies: ["TypeScript", "Vue", "Turborepo", "Neon", "Vercel"]
 link: "https://git-wayback.com"
 logo: "/portfolio/logos/git-wayback.svg"
-github: "https://github.com/hbeneke/git-wayback"
+github: "https://github.com/equero/git-wayback"
 demo: https://git-wayback.com
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 status: "wip"
 order: 2
-version: "0.8.0"
+version: "0.9.1"
 changelog:
+  - version: "0.9.1"
+    date: "2026-10-12T00:00:00.000Z"
+    changes:
+      - "CI now runs on master, where releases land, instead of main"
+      - "Fixed two files that had been failing the CI lint check since September"
+  - version: "0.9.0"
+    date: "2026-10-12T00:00:00.000Z"
+    changes:
+      - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
   - version: "0.8.0"
     date: "2026-09-21T00:00:00.000Z"
     changes:
