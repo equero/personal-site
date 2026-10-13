@@ -15,7 +15,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Resume Collection", () => {
     it("validates resume schema with valid data", () => {
-      if (!collections.resume || !collections.resume.schema) {
+      if (!collections.resume?.schema) {
         expect.fail("Resume schema is not defined");
       }
 
@@ -39,7 +39,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates resume schema with all optional fields", () => {
-      if (!collections.resume || !collections.resume.schema) {
+      if (!collections.resume?.schema) {
         expect.fail("Resume schema is not defined");
       }
 
@@ -66,7 +66,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid resume data", () => {
-      if (!collections.resume || !collections.resume.schema) {
+      if (!collections.resume?.schema) {
         expect.fail("Resume schema is not defined");
       }
 
@@ -89,7 +89,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("handles startup field default value", () => {
-      if (!collections.resume || !collections.resume.schema) {
+      if (!collections.resume?.schema) {
         expect.fail("Resume schema is not defined");
       }
 
@@ -117,7 +117,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Skills Collection", () => {
     it("validates skills schema with valid data", () => {
-      if (!collections.skills || !collections.skills.schema) {
+      if (!collections.skills?.schema) {
         expect.fail("Skills schema is not defined");
       }
 
@@ -136,7 +136,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates skills schema with empty perks array", () => {
-      if (!collections.skills || !collections.skills.schema) {
+      if (!collections.skills?.schema) {
         expect.fail("Skills schema is not defined");
       }
 
@@ -155,7 +155,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid skills data missing name", () => {
-      if (!collections.skills || !collections.skills.schema) {
+      if (!collections.skills?.schema) {
         expect.fail("Skills schema is not defined");
       }
 
@@ -174,7 +174,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid skills data missing perks", () => {
-      if (!collections.skills || !collections.skills.schema) {
+      if (!collections.skills?.schema) {
         expect.fail("Skills schema is not defined");
       }
 
@@ -193,7 +193,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid skills data with non-array perks", () => {
-      if (!collections.skills || !collections.skills.schema) {
+      if (!collections.skills?.schema) {
         expect.fail("Skills schema is not defined");
       }
 
@@ -214,7 +214,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Honors Collection", () => {
     it("validates honors schema with valid data", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -235,7 +235,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates honors schema with year range", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -256,7 +256,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates honors schema with different categories", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -281,7 +281,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid honors data missing category", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -302,7 +302,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid honors data missing year", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -323,7 +323,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid honors data missing title", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -344,7 +344,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid honors data missing location", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -365,7 +365,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid honors data with wrong data types", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -408,7 +408,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("accepts various year formats", () => {
-      if (!collections.honors || !collections.honors.schema) {
+      if (!collections.honors?.schema) {
         expect.fail("Honors schema is not defined");
       }
 
@@ -435,7 +435,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Notes Collection", () => {
     it("validates notes schema with valid data", () => {
-      if (!collections.notes || !collections.notes.schema) {
+      if (!collections.notes?.schema) {
         expect.fail("Notes schema is not defined");
       }
 
@@ -457,7 +457,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid notes data", () => {
-      if (!collections.notes || !collections.notes.schema) {
+      if (!collections.notes?.schema) {
         expect.fail("Notes schema is not defined");
       }
 
@@ -480,7 +480,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Portfolio Projects Collection", () => {
     it("validates portfolioProjects schema with valid data", () => {
-      if (!collections.portfolioProjects || !collections.portfolioProjects.schema) {
+      if (!collections.portfolioProjects?.schema) {
         expect.fail("Portfolio Projects schema is not defined");
       }
 
@@ -506,7 +506,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates portfolioProjects schema with minimal required fields", () => {
-      if (!collections.portfolioProjects || !collections.portfolioProjects.schema) {
+      if (!collections.portfolioProjects?.schema) {
         expect.fail("Portfolio Projects schema is not defined");
       }
 
@@ -530,7 +530,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid portfolioProjects data", () => {
-      if (!collections.portfolioProjects || !collections.portfolioProjects.schema) {
+      if (!collections.portfolioProjects?.schema) {
         expect.fail("Portfolio Projects schema is not defined");
       }
 
@@ -551,7 +551,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("handles featured field default value", () => {
-      if (!collections.portfolioProjects || !collections.portfolioProjects.schema) {
+      if (!collections.portfolioProjects?.schema) {
         expect.fail("Portfolio Projects schema is not defined");
       }
 
@@ -577,7 +577,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Posts Collection", () => {
     it("validates posts schema with valid data", () => {
-      if (!collections.posts || !collections.posts.schema) {
+      if (!collections.posts?.schema) {
         expect.fail("Posts schema is not defined");
       }
 
@@ -604,7 +604,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates posts schema with minimal required fields", () => {
-      if (!collections.posts || !collections.posts.schema) {
+      if (!collections.posts?.schema) {
         expect.fail("Posts schema is not defined");
       }
 
@@ -629,7 +629,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("rejects invalid posts data", () => {
-      if (!collections.posts || !collections.posts.schema) {
+      if (!collections.posts?.schema) {
         expect.fail("Posts schema is not defined");
       }
 
@@ -650,7 +650,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("handles default values for featured and draft fields", () => {
-      if (!collections.posts || !collections.posts.schema) {
+      if (!collections.posts?.schema) {
         expect.fail("Posts schema is not defined");
       }
 
@@ -677,7 +677,7 @@ describe("Content Collections Configuration", () => {
 
   describe("Tags Collection", () => {
     it("validates tags schema with valid data", () => {
-      if (!collections.tags || !collections.tags.schema) {
+      if (!collections.tags?.schema) {
         expect.fail("Tags schema is not defined");
       }
 
@@ -696,7 +696,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates tags schema with minimal data", () => {
-      if (!collections.tags || !collections.tags.schema) {
+      if (!collections.tags?.schema) {
         expect.fail("Tags schema is not defined");
       }
 
@@ -712,7 +712,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("validates title length constraint", () => {
-      if (!collections.tags || !collections.tags.schema) {
+      if (!collections.tags?.schema) {
         expect.fail("Tags schema is not defined");
       }
 
@@ -731,7 +731,7 @@ describe("Content Collections Configuration", () => {
     });
 
     it("accepts title within length constraint", () => {
-      if (!collections.tags || !collections.tags.schema) {
+      if (!collections.tags?.schema) {
         expect.fail("Tags schema is not defined");
       }
 

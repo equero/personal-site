@@ -89,7 +89,7 @@ export class SiteSearch extends HTMLElement {
       this.setupMobileTagBehavior();
 
       this.searchInitialized = true;
-    } catch (error) {
+    } catch (_error) {
       this.showSearchMessage("Search is currently unavailable", "Try reloading the page");
     }
   }

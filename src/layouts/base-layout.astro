@@ -89,16 +89,19 @@ const {
       <slot />
     </main>
     <site-footer
-      nickname={siteConfig.nickname}
+      name={siteConfig.authorName}
+      href="/about"
       year={siteConfig.copyrightYear}
-      copyright="bugs"
-      class="[--font:var(--font-jetbrains)] [--link:rgb(var(--primary))] [--link-hover:rgb(var(--primary-hovered))] [--accent:rgb(var(--secondary))]"
+      copyright="Copyright© {year}. All bugs reserved."
+      reveal="hover"
+      class="[--font:var(--font-jetbrains)] [--link:rgb(var(--primary))] [--link-hover:rgb(var(--primary-hovered))]"
     >
+      <span slot="tagline">Made with <span class="secondary">❤️</span> from Spain.</span>
     </site-footer>
     <Notes />
 
     <script>
-      import "@hbeneke/parley";
+      import "@equerodev/parley";
     </script>
   </body>
 </html>
