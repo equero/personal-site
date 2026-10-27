@@ -1,21 +1,21 @@
 ---
 title: "Available for Hire"
 slug: "available-for-hire"
-description: "Looking for a Senior Software Engineer or Tech Lead? I'm currently open to new opportunities and freelance projects."
-publishDate: "2025-09-15T11:23:00Z"
+description: "Open to new projects and to Team Lead, Tech Lead or Full Stack roles. Let's talk!"
+publishDate: "2026-10-27T11:01:00Z"
 starred: true
 ---
 
 ## Looking for a Senior Software Engineer or Tech Lead?
 
-I'm **Enrique Quero**, a Senior Software Engineer and Tech Lead with over 10 years of experience. I build web products end to end and I've led development teams on projects of up to 20 developers. I'm currently open to new opportunities.
+I'm **Enrique Quero**, a Senior Software Engineer and Tech Lead with over 10 years of experience. I build web products end to end and I've led development teams on projects of up to 20 developers. I'm currently looking for new projects and for a Team Lead, Tech Lead or Full Stack role.
 
 ### What I'm Looking For
 
 While I'm currently employed full-time, I'm always interested in:
 
 - **Challenging freelance projects**
-- **Full-time positions**, especially Tech Lead roles
+- **Team Lead, Tech Lead or Full Stack positions**, full-time
 - **Consulting opportunities**
 - **Open-source contributions**
 
