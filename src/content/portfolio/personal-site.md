@@ -11,8 +11,12 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.7.3"
+version: "1.7.4"
 changelog:
+  - version: "1.7.4"
+    date: "2026-10-27T00:00:00.000Z"
+    changes:
+      - "DivText's portfolio entry now shows version 1.2.0 and its latest changelog"
   - version: "1.7.3"
     date: "2026-10-27T00:00:00.000Z"
     changes:
