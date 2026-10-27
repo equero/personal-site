@@ -9,7 +9,6 @@ demo: "https://www.npmjs.com/package/@equerodev/synkro"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
-status: "wip"
 order: 8
 version: "0.2.2"
 changelog:
