@@ -10,8 +10,21 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 4
-version: "1.1.20"
+version: "1.2.0"
 changelog:
+  - version: "1.2.0"
+    date: "2026-10-27T00:00:00.000Z"
+    changes:
+      - "Added Pixel Shadow, the new default font: thick block letters with an outline cast down and to the right, in the style of the ANSI Shadow figlet font"
+      - "Words can span several lines: Shift+Enter starts a new one"
+      - "Set the logo size in px, like a font size, and zoom the preview without touching the exported code"
+      - "Borders and the shadow outline each have their own line style"
+      - "Designs are saved per window in the browser instead of the address bar, and a Share button copies a link that opens as a new window"
+  - version: "1.1.21"
+    date: "2026-10-27T00:00:00.000Z"
+    changes:
+      - "Switched to @equerodev/parley, since the old package is gone from npm"
+      - "The footer now shows Enrique Quero and links to equero.dev"
   - version: "1.1.20"
     date: "2026-10-13T00:00:00.000Z"
     changes:
