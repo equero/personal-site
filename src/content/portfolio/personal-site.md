@@ -11,8 +11,17 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.7.2"
+version: "1.7.3"
 changelog:
+  - version: "1.7.3"
+    date: "2026-10-27T00:00:00.000Z"
+    changes:
+      - "The site now uses only my real name, Enrique Quero, with a new contact email and X link"
+      - "The profile now reads Senior Software Engineer and Tech Lead, and the current job shows full stack work with Java Spring"
+      - "The Available for Hire note has a fresh date and lists Team Lead, Tech Lead and Full Stack roles"
+      - "Synkro no longer shows a WIP badge"
+      - "The footer now comes from @equerodev/parley"
+      - "Dependencies updated, including Biome 2, Vitest 5, TypeScript 6 and shiki 4"
   - version: "1.7.2"
     date: "2026-10-13T00:00:00.000Z"
     changes:
