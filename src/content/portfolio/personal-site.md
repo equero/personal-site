@@ -11,13 +11,22 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.7.2"
+version: "1.7.3"
 changelog:
+  - version: "1.7.3"
+    date: "2026-10-27T00:00:00.000Z"
+    changes:
+      - "The site now uses only my real name, Enrique Quero, with a new contact email and X link"
+      - "The profile now reads Senior Software Engineer and Tech Lead, and the current job shows full stack work with Java Spring"
+      - "The Available for Hire note has a fresh date and lists Team Lead, Tech Lead and Full Stack roles"
+      - "Synkro no longer shows a WIP badge"
+      - "The footer now comes from @equerodev/parley"
+      - "Dependencies updated, including Biome 2, Vitest 5, TypeScript 6 and shiki 4"
   - version: "1.7.2"
     date: "2026-10-13T00:00:00.000Z"
     changes:
       - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
-      - "GitHub links moved from hbeneke to equero"
+      - "GitHub links moved to the equero account"
       - "Brought the changelogs of every project up to date"
       - "Added Synkro to the portfolio"
   - version: "1.7.1"
@@ -45,7 +54,7 @@ changelog:
   - version: "1.6.0"
     date: "2026-06-30T00:00:00.000Z"
     changes:
-      - "Adopted the @hbeneke/parley web component library for the site footer"
+      - "Adopted the @equerodev/parley web component library for the site footer"
       - "Added Parley to the portfolio with open-source license display"
       - "Upgraded to Astro 7 and Vercel adapter 11"
       - "Removed the portfolio demo hover image preview"

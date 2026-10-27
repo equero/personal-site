@@ -5,7 +5,7 @@ description: "My personal library of reusable components, built with native Web 
 technologies: ["TypeScript", "Web Components", "npm"]
 logo: "/portfolio/logos/parley.svg"
 github: "https://github.com/equero/parley"
-demo: "https://www.npmjs.com/package/@hbeneke/parley"
+demo: "https://www.npmjs.com/package/@equerodev/parley"
 license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
@@ -30,7 +30,7 @@ changelog:
   - version: "0.1.0"
     date: "2026-06-29T00:00:00.000Z"
     changes:
-      - "First release published to npm as @hbeneke/parley"
+      - "First release published to npm"
       - "Added the site-footer element with copyright presets, custom templating, and a hover-reveal tagline"
       - "Encapsulated styling behind a shadow root, themeable through CSS custom properties"
 ---

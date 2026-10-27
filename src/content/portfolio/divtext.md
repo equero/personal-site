@@ -63,7 +63,7 @@ changelog:
   - version: "1.1.0"
     date: "2026-07-01T00:00:00.000Z"
     changes:
-      - "Rebuilt the footer with the @hbeneke/parley web component library"
+      - "Rebuilt the footer with the @equerodev/parley web component library"
       - "Migrated the build to Vite with a dev server and hot reload"
       - "Componentized the window manager into native web components"
       - "Added Vercel Web Analytics for visit tracking"

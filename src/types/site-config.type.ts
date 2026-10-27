@@ -14,7 +14,6 @@ interface WorkAvailability {
 export interface SiteConfig {
   locale: string;
   authorName: string;
-  nickname: string;
   obfuscatedEmail: string;
   jobTitle: string;
   siteTitle: string;

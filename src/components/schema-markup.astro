@@ -58,7 +58,6 @@ const getSchema = () => {
         ...baseSchema,
         "@type": "Person",
         name: siteConfig.authorName,
-        alternateName: siteConfig.nickname,
         jobTitle: siteConfig.jobTitle,
         description: description || `Experienced ${siteConfig.jobTitle}`,
         url: siteConfig.siteUrl,

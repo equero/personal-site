@@ -6,7 +6,7 @@ import { siteConfig } from "@site-config";
 
 <BaseLayout
   title={siteConfig.siteTitle}
-  description={`Welcome to ${siteConfig.authorName}'s personal website and blog. I'm a senior ${siteConfig.jobTitle} with over 10 years of experience in modern web technologies. Explore my thoughts, projects, and professional journey in software development.`}
+  description={`Welcome to ${siteConfig.authorName}'s personal website and blog. I'm a ${siteConfig.jobTitle} and Tech Lead with over 10 years of experience building web products end to end. Explore my thoughts, projects, and professional journey in software development.`}
   schemaType="WebSite"
   canonicalUrl={new URL("/", siteConfig.siteUrl)}
 >
@@ -19,9 +19,11 @@ import { siteConfig } from "@site-config";
     <p class="mb-4 text-xs">
       I'm {siteConfig.authorName}, a <span class="secondary font-bold"
         >{siteConfig.jobTitle}</span
-      > with over 10 years of experience, driven by the motto 'Never stop learning'.
-      This philosophy fuels my passion for web development, inspiring me to grow
-      and improve every day. I’m always open to new challenges and opportunities,
+      > and <span class="secondary font-bold">Tech Lead</span> with over 10
+      years of experience, driven by the motto 'Never stop learning'. I build
+      web products end to end, from the interface to the services behind it,
+      and I've led teams on projects of up to 20 developers. I’m always open to
+      new challenges and opportunities,
       so feel free to reach out if you think I can contribute to your project or
       company.
     </p>
@@ -46,9 +48,6 @@ import { siteConfig } from "@site-config";
           href={siteConfig.socialLinks.x}
           aria-label={`Navigate to X profile`}>X</a
         >.
-      </p>
-      <p class="text-xs mt-5">
-        In some places, I am also known as {siteConfig.nickname}
       </p>
     </div>
   </section>
