@@ -44,7 +44,7 @@ describe("siteConfig", () => {
   it("should have correct author information", () => {
     expect(siteConfig.authorName).toBe("Enrique Quero");
     expect(siteConfig.obfuscatedEmail).toBe("equero [at] pm [dot] me");
-    expect(siteConfig.jobTitle).toBe("Frontend Developer");
+    expect(siteConfig.jobTitle).toBe("Senior Software Engineer");
   });
 
   it("should have correct site information", () => {

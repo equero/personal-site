@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
   locale: "en-US",
   authorName: "Enrique Quero",
   obfuscatedEmail: "equero [at] pm [dot] me",
-  jobTitle: "Frontend Developer",
+  jobTitle: "Senior Software Engineer",
   siteTitle: "Enrique Quero",
   motto: "Never stop learning",
   siteCreationYear: "2024",

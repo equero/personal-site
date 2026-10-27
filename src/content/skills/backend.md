@@ -1,4 +1,4 @@
 ---
 name: "Backend"
-perks: ["PHP", "Python", "Symfony", "Laravel", "Node.js"]
+perks: ["Java", "Spring", "Node.js", "Python", "PHP", "Symfony", "Laravel"]
 ---
