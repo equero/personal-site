@@ -28,7 +28,6 @@ describe("siteConfig", () => {
   it("should export a SiteConfig object with all required properties", () => {
     const requiredProperties = [
       "authorName",
-      "nickname",
       "obfuscatedEmail",
       "jobTitle",
       "siteTitle",
@@ -44,8 +43,7 @@ describe("siteConfig", () => {
 
   it("should have correct author information", () => {
     expect(siteConfig.authorName).toBe("Enrique Quero");
-    expect(siteConfig.nickname).toBe("Habakuk Beneke");
-    expect(siteConfig.obfuscatedEmail).toBe("hbeneke [at] proton [dot] me");
+    expect(siteConfig.obfuscatedEmail).toBe("equero [at] pm [dot] me");
     expect(siteConfig.jobTitle).toBe("Frontend Developer");
   });
 

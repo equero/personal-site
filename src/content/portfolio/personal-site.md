@@ -17,7 +17,7 @@ changelog:
     date: "2026-10-13T00:00:00.000Z"
     changes:
       - "The repo's own release script and git hooks were replaced by synkro, a CLI that merges develop into master, bumps the version and tags the release in one step"
-      - "GitHub links moved from hbeneke to equero"
+      - "GitHub links moved to the equero account"
       - "Brought the changelogs of every project up to date"
       - "Added Synkro to the portfolio"
   - version: "1.7.1"
@@ -45,7 +45,7 @@ changelog:
   - version: "1.6.0"
     date: "2026-06-30T00:00:00.000Z"
     changes:
-      - "Adopted the @hbeneke/parley web component library for the site footer"
+      - "Adopted the @equerodev/parley web component library for the site footer"
       - "Added Parley to the portfolio with open-source license display"
       - "Upgraded to Astro 7 and Vercel adapter 11"
       - "Removed the portfolio demo hover image preview"

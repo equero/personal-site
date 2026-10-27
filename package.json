@@ -1,11 +1,10 @@
 {
-  "name": "@habakukbeneke/personal-site",
+  "name": "@equerodev/personal-site",
   "version": "1.7.2",
   "description": "My digital portfolio built with Astro and Tailwind CSS, highlighting my development expertise and professional journey.",
   "author": {
-    "name": "Enrique Quero Vilar",
-    "nickname": "Habakuk Beneke",
-    "e-mail": "habakukBeneke [at] proton [dot] me"
+    "name": "Enrique Quero",
+    "e-mail": "equero [at] pm [dot] me"
   },
   "keywords": [
     "blog",

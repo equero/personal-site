@@ -26,8 +26,7 @@ export const menuLinks: MenuLink[] = [
 export const siteConfig: SiteConfig = {
   locale: "en-US",
   authorName: "Enrique Quero",
-  nickname: "Habakuk Beneke",
-  obfuscatedEmail: "hbeneke [at] proton [dot] me",
+  obfuscatedEmail: "equero [at] pm [dot] me",
   jobTitle: "Frontend Developer",
   siteTitle: "Enrique Quero",
   motto: "Never stop learning",
@@ -36,7 +35,7 @@ export const siteConfig: SiteConfig = {
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/equerodev/",
     github: "https://www.github.com/equero",
-    x: "https://x.com/habakukbeneke",
+    x: "https://x.com/equerodev",
   },
   // Contact information and availability
   location: "Madrid, Spain",
