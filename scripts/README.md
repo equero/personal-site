@@ -17,7 +17,7 @@ Generates the search index for the static site using Pagefind.
 **Usage:**
 
 ```bash
-npm run search:build
+pnpm search:build
 ```
 
 **When it runs:**
