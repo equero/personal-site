@@ -34,6 +34,7 @@ const postUrl = new URL(`/posts/${post.data.slug}/`, siteConfig.siteUrl);
   publishDate={publishDate}
   modifiedDate={updatedDate}
   canonicalUrl={postUrl}
+  image={`/og/${post.data.slug}.png`}
   schemaType="BlogPosting"
   tags={tags}
 >
