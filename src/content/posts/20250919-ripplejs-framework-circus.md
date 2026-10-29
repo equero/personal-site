@@ -6,7 +6,6 @@ description: "An ironic and critical reflection on the arrival of RippleJS and t
 tags: ["frontend", "frameworks", "javascript", "typescript", "ripplejs", "web development", "opinion", "criticism"]
 featured: true
 draft: false
-readTime: 10
 ---
 
 ## The Never-Ending Framework Factory

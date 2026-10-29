@@ -550,7 +550,7 @@ describe("tagUtils", () => {
             description: "Desc",
             featured: false,
             draft: false,
-            tags: ["c++", "c#", "node.js", "@types"],
+            tags: ["c++", "c#", "node.js", "@/types"],
           },
         },
       ]);

@@ -1,12 +1,12 @@
 ---
 import { render } from "astro:content";
-import ScrollToTop from "@components/scroll-to-top.astro";
-import TableOfContents from "@components/table-of-contents.astro";
-import EtiquetteIcon from "@icons/etiquette.svg?raw";
-import BaseLayout from "@layouts/base-layout.astro";
-import { siteConfig } from "@site-config";
-import { getAllPosts } from "@utils/post";
-import "@styles/components/post.css";
+import ScrollToTop from "@/components/scroll-to-top.astro";
+import TableOfContents from "@/components/table-of-contents.astro";
+import EtiquetteIcon from "@/icons/etiquette.svg?raw";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { siteConfig } from "@/site.config";
+import { getAllPosts } from "@/utils/post";
+import "@/styles/components/post.css";
 
 export async function getStaticPaths() {
   const posts = await getAllPosts(false, false);
@@ -34,6 +34,7 @@ const postUrl = new URL(`/posts/${post.data.slug}/`, siteConfig.siteUrl);
   publishDate={publishDate}
   modifiedDate={updatedDate}
   canonicalUrl={postUrl}
+  image={`/og/${post.data.slug}.png`}
   schemaType="BlogPosting"
   tags={tags}
 >

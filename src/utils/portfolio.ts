@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import type { ActivityPoint, Project } from "@types";
+import type { ActivityPoint, Project } from "@/types";
 
 /**
  * Fetches projects and applies a composite sort based on the flag combination:

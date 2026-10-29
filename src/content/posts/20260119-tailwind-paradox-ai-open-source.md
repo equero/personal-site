@@ -6,7 +6,6 @@ description: "Tailwind CSS is more popular than ever, yet 75% of its engineering
 tags: ["tailwind", "ai", "open-source", "frontend", "opinion", "criticism", "web development"]
 featured: true
 draft: false
-readTime: 12
 ---
 
 ## The Most Popular Framework Nobody's Paying For

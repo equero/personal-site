@@ -586,7 +586,6 @@ describe("Content Collections Configuration", () => {
         publishDate: "2023-05-15",
         slug: "test-blog-post",
         description: "This is a test blog post",
-        content: "Lorem ipsum dolor sit amet...",
         tags: ["technology", "programming"],
         featured: true,
         draft: false,

@@ -1,7 +1,7 @@
 ---
-import SideMenuIcon from "@icons/menu.svg";
-import { menuLinks } from "@site-config";
-import { isActivePath } from "@utils/navigation";
+import SideMenuIcon from "@/icons/menu.svg";
+import { menuLinks } from "@/site.config";
+import { isActivePath } from "@/utils/navigation";
 
 const url = new URL(Astro.request.url);
 const isActive = (path: string) => isActivePath(url.pathname, path);
@@ -49,5 +49,5 @@ const isActive = (path: string) => isActivePath(url.pathname, path);
 </mobile-menu>
 
 <script>
-  import("@scripts/mobile-menu");
+  import("@/scripts/mobile-menu");
 </script>

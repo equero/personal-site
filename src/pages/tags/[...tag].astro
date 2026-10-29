@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "@layouts/base-layout.astro";
-import { siteConfig } from "@site-config";
-import { formatPostDate } from "@utils/date";
-import { getAllTags } from "@utils/post";
-import { getTagPageData } from "@utils/tag";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { siteConfig } from "@/site.config";
+import { formatPostDate } from "@/utils/date";
+import { getAllTags } from "@/utils/post";
+import { getTagPageData } from "@/utils/tag";
 
 export async function getStaticPaths() {
   const allTags = await getAllTags(false);

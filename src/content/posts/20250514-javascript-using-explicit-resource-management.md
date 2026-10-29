@@ -6,7 +6,6 @@ description: "JavaScript finally got explicit resource management with the using
 tags: ["javascript", "ecmascript", "node", "typescript", "tutorial", "web development"]
 featured: true
 draft: false
-readTime: 11
 ---
 
 ## The try/finally pyramid of doom

@@ -13,6 +13,7 @@ vi.mock("@/site.config", () => ({
     authorName: "Test Author",
     jobTitle: "Developer",
     siteUrl: "https://example.com",
+    locale: "en-US",
   },
 }));
 
@@ -33,12 +34,12 @@ describe("Posts RSS Feed", () => {
     {
       id: "first-blog-post",
       collection: "posts" as const,
+      rendered: { html: "<p>Full content of the first blog post with markdown and details.</p>" },
       data: {
         title: "First Blog Post",
         description: "This is the first blog post",
         publishDate: "2024-01-01T00:00:00.000Z",
         slug: "first-blog-post",
-        content: "Full content of the first blog post with markdown and details.",
         tags: ["javascript", "tutorial"],
         featured: true,
         draft: false,
@@ -47,12 +48,12 @@ describe("Posts RSS Feed", () => {
     {
       id: "advanced-typescript-tips",
       collection: "posts" as const,
+      rendered: { html: "<p>Detailed content about TypeScript advanced features.</p>" },
       data: {
         title: "Advanced TypeScript Tips",
         description: "Learn advanced TypeScript techniques",
         publishDate: "2024-01-15T00:00:00.000Z",
         slug: "advanced-typescript-tips",
-        content: "Detailed content about TypeScript advanced features.",
         tags: ["typescript", "advanced", "tips"],
         featured: false,
         draft: false,
@@ -61,12 +62,12 @@ describe("Posts RSS Feed", () => {
     {
       id: "web-performance-optimization",
       collection: "posts" as const,
+      rendered: { html: "<p>Complete guide to web performance optimization techniques.</p>" },
       data: {
         title: "Web Performance Optimization",
         description: "How to optimize your web applications",
         publishDate: "2024-02-01T00:00:00.000Z",
         slug: "web-performance-optimization",
-        content: "Complete guide to web performance optimization techniques.",
         tags: ["performance", "optimization", "web"],
         featured: true,
         draft: false,
@@ -131,7 +132,7 @@ describe("Posts RSS Feed", () => {
       expect(items[0]).toEqual({
         title: "First Blog Post",
         description: "This is the first blog post",
-        content: "Full content of the first blog post with markdown and details.",
+        content: "<p>Full content of the first blog post with markdown and details.</p>",
         pubDate: new Date("2024-01-01T00:00:00.000Z"),
         link: "/posts/first-blog-post/",
         categories: ["javascript", "tutorial"],
@@ -139,7 +140,7 @@ describe("Posts RSS Feed", () => {
       expect(items[1]).toEqual({
         title: "Advanced TypeScript Tips",
         description: "Learn advanced TypeScript techniques",
-        content: "Detailed content about TypeScript advanced features.",
+        content: "<p>Detailed content about TypeScript advanced features.</p>",
         pubDate: new Date("2024-01-15T00:00:00.000Z"),
         link: "/posts/advanced-typescript-tips/",
         categories: ["typescript", "advanced", "tips"],
@@ -147,7 +148,7 @@ describe("Posts RSS Feed", () => {
       expect(items[2]).toEqual({
         title: "Web Performance Optimization",
         description: "How to optimize your web applications",
-        content: "Complete guide to web performance optimization techniques.",
+        content: "<p>Complete guide to web performance optimization techniques.</p>",
         pubDate: new Date("2024-02-01T00:00:00.000Z"),
         link: "/posts/web-performance-optimization/",
         categories: ["performance", "optimization", "web"],
@@ -189,17 +190,37 @@ describe("Posts RSS Feed", () => {
       });
     });
 
+    it("should turn root-relative links and images into absolute URLs", async () => {
+      vi.mocked(getLatestPosts).mockResolvedValue([
+        {
+          ...mockPosts[0],
+          rendered: {
+            html: '<a href="/posts/other/">x</a><img src="/logo.png"><a href="https://a.dev/">y</a><a href="//cdn.dev/z">z</a>',
+          },
+        },
+      ]);
+
+      await GET();
+
+      const rssCall = vi.mocked(rss).mock.calls[0][0];
+      const items = rssCall.items as Array<RssItem & { content?: string }>;
+
+      expect(items[0].content).toBe(
+        '<a href="https://example.com/posts/other/">x</a><img src="https://example.com/logo.png"><a href="https://a.dev/">y</a><a href="//cdn.dev/z">z</a>',
+      );
+    });
+
     it("should handle posts without tags", async () => {
       const mockPostsWithoutTags = [
         {
           id: "post-without-tags",
           collection: "posts" as const,
+          rendered: { html: "<p>Content without tags</p>" },
           data: {
             title: "Post Without Tags",
             description: "Description of post without tags",
             publishDate: "2024-01-01T00:00:00.000Z",
             slug: "post-without-tags",
-            content: "Content without tags",
             featured: false,
             draft: false,
           },
@@ -217,7 +238,7 @@ describe("Posts RSS Feed", () => {
       expect(items[0]).toEqual({
         title: "Post Without Tags",
         description: "Description of post without tags",
-        content: "Content without tags",
+        content: "<p>Content without tags</p>",
         pubDate: new Date("2024-01-01T00:00:00.000Z"),
         link: "/posts/post-without-tags/",
         categories: [],
@@ -229,12 +250,12 @@ describe("Posts RSS Feed", () => {
         {
           id: "post-with-empty-tags",
           collection: "posts" as const,
+          rendered: { html: "<p>Content with empty tags array</p>" },
           data: {
             title: "Post With Empty Tags",
             description: "Description of post with empty tags",
             publishDate: "2024-01-01T00:00:00.000Z",
             slug: "post-with-empty-tags",
-            content: "Content with empty tags array",
             tags: [],
             featured: false,
             draft: false,
@@ -266,12 +287,12 @@ describe("Posts RSS Feed", () => {
         {
           id: "invalid-date-post",
           collection: "posts" as const,
+          rendered: { html: "<p>Content of post with invalid date</p>" },
           data: {
             title: "Post With Invalid Date",
             description: "Post with invalid date format",
             publishDate: "invalid-date",
             slug: "invalid-date-post",
-            content: "Content of post with invalid date",
             tags: ["test"],
             featured: false,
             draft: false,
@@ -334,12 +355,12 @@ describe("Posts RSS Feed", () => {
       const manyPosts = Array.from({ length: 25 }, (_, index) => ({
         id: `post-${index + 1}`,
         collection: "posts" as const,
+        rendered: { html: `<p>Content ${index + 1}</p>` },
         data: {
           title: `Post ${index + 1}`,
           description: `Description ${index + 1}`,
           publishDate: `2024-01-${String(index + 1).padStart(2, "0")}T00:00:00.000Z`,
           slug: `post-${index + 1}`,
-          content: `Content ${index + 1}`,
           tags: [`tag-${index + 1}`],
           featured: false,
           draft: false,
@@ -358,12 +379,12 @@ describe("Posts RSS Feed", () => {
         {
           id: "large-content-post",
           collection: "posts" as const,
+          rendered: { html: `<p>${"a".repeat(10000)}</p>` }, // 10KB of content
           data: {
             title: "Post With Large Content",
             description: "Post with very large content",
             publishDate: "2024-01-01T00:00:00.000Z",
             slug: "large-content-post",
-            content: "a".repeat(10000), // 10KB of content
             tags: ["large", "content"],
             featured: false,
             draft: false,

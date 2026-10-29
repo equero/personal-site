@@ -3,11 +3,21 @@ import { getLatestPosts } from "@/utils/post";
 import rss from "@astrojs/rss";
 
 /**
+ * Feed readers don't resolve root-relative URLs, so point them at the site.
+ *
+ * @param html - Rendered post HTML.
+ * @returns The same HTML with `href="/..."` and `src="/..."` made absolute.
+ */
+function toAbsoluteUrls(html: string): string {
+  const origin = new URL(siteConfig.siteUrl).origin;
+  return html.replace(/\b(href|src)="\/(?!\/)/g, `$1="${origin}/`);
+}
+
+/**
  * Astro GET endpoint that generates the RSS feed for the latest blog posts.
  *
  * Fetches the 20 most recent published posts and maps them to RSS items,
- * including optional fields such as tags (as categories), read time, and
- * last updated date when available.
+ * with the full rendered post as content and tags as categories.
  *
  * @returns An RSS response object for the `/posts/rss.xml` route.
  */
@@ -21,13 +31,11 @@ export async function GET() {
     items: latestPosts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      content: post.data.content,
+      content: post.rendered?.html ? toAbsoluteUrls(post.rendered.html) : undefined,
       pubDate: new Date(post.data.publishDate),
       link: `/posts/${post.data.slug}/`,
       categories: post.data.tags || [],
-      readTime: post.data.readTime,
-      updatedDate: post.data.updatedDate,
     })),
-    customData: "<language>en-us</language>",
+    customData: `<language>${siteConfig.locale.toLowerCase()}</language>`,
   });
 }

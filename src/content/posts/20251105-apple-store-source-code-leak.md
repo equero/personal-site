@@ -6,7 +6,6 @@ description: "The entire Apple App Store website source code leaked via source m
 tags: ["apple", "security", "frontend", "javascript", "svelte", "source-maps", "leak"]
 featured: true
 draft: false
-readTime: 10
 ---
 
 So the entire Apple App Store website source code is now on GitHub. Not minified, not obfuscated - actual TypeScript files with comments, folder structure, internal references, everything. Someone uploaded it [to a public repo](https://github.com/rxliuli/apps.apple.com) and I spent my whole Sunday going through it instead of doing literally anything else. Worth it though.

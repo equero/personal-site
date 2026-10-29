@@ -18,13 +18,5 @@ export default defineConfig({
   prefetch: true,
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        "@": "/src",
-        "@types": "/src/types/index.ts",
-        "@scripts": "/src/scripts",
-        "@icons": "/public/icons",
-      },
-    },
   },
 });

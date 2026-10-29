@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import {
+  estimateReadTime,
   getAllPosts,
   getAllTags,
   getFeaturedPosts,
@@ -442,6 +443,46 @@ describe("postsUtils", () => {
       expect(featuredPosts).toEqual([]);
       expect(postsByTag).toEqual([]);
       expect(allTags).toEqual([]);
+    });
+  });
+
+  describe("estimateReadTime", () => {
+    it("should round up to whole minutes at 200 words per minute", () => {
+      expect(estimateReadTime("word ".repeat(200))).toBe(1);
+      expect(estimateReadTime("word ".repeat(201))).toBe(2);
+      expect(estimateReadTime("word ".repeat(1000))).toBe(5);
+    });
+
+    it("should return at least 1 minute for an empty body", () => {
+      expect(estimateReadTime("")).toBe(1);
+    });
+
+    it("should not count link URLs as words", () => {
+      const withLinks = `${"word ".repeat(199)}[link](https://example.com/a very long url)`;
+      expect(estimateReadTime(withLinks)).toBe(1);
+    });
+  });
+
+  describe("readTime on returned posts", () => {
+    it("should estimate readTime from the body when frontmatter has none", async () => {
+      mockGetCollection.mockResolvedValue([
+        { ...mockPostsCollectionEntries[0], body: "word ".repeat(450) },
+      ]);
+
+      const [post] = await getAllPosts();
+
+      expect(post.data.readTime).toBe(3);
+    });
+
+    it("should keep a readTime set in frontmatter", async () => {
+      const entry = mockPostsCollectionEntries[0];
+      mockGetCollection.mockResolvedValue([
+        { ...entry, data: { ...entry.data, readTime: 42 }, body: "word ".repeat(450) },
+      ]);
+
+      const [post] = await getAllPosts();
+
+      expect(post.data.readTime).toBe(42);
     });
   });
 });

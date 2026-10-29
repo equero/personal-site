@@ -6,7 +6,6 @@ description: "After nine years of arguing, CSS got native masonry. It is not dis
 tags: ["css", "frontend", "web development", "web standards", "tutorial", "accessibility"]
 featured: true
 draft: false
-readTime: 14
 ---
 
 ## The layout we faked for a decade

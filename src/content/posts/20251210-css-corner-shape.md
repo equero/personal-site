@@ -6,7 +6,6 @@ description: "The new CSS corner-shape property is here to revolutionize how we 
 tags: ["css", "frontend", "web development", "design", "tutorial"]
 featured: true
 draft: false
-readTime: 15
 ---
 
 ## The Eternal Corner Problem

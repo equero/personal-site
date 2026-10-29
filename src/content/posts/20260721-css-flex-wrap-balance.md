@@ -6,7 +6,6 @@ description: "Chrome 150 shipped flex-wrap: balance, an eight-year-old proposal 
 tags: ["css", "frontend", "web development", "web standards", "flexbox", "tutorial"]
 featured: true
 draft: false
-readTime: 13
 ---
 
 ## The row that ruins everything

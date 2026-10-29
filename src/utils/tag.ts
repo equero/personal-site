@@ -1,6 +1,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import type { TagContent, TagPageData, TagWithCount } from "@types";
-import { getAllPosts, getPostsByTag, groupPostsByYear } from "@utils/post";
+import type { TagContent, TagPageData, TagWithCount } from "@/types";
+import { getAllPosts, getPostsByTag, groupPostsByYear } from "@/utils/post";
 
 // Single-pass tag count: iterates posts once, accumulating counts in a Map.
 export async function getAllTagsWithCounts(includeDrafts = false): Promise<TagWithCount[]> {

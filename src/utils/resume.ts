@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import type { WorkExperience } from "@types";
+import type { WorkExperience } from "@/types";
 
 function compareByStartDateDesc(a: WorkExperience, b: WorkExperience): number {
   return new Date(b.start_date).getTime() - new Date(a.start_date).getTime();

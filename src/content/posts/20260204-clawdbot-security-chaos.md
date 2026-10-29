@@ -6,7 +6,6 @@ description: "A breakdown of how Clawdbot became the fastest-growing GitHub proj
 tags: ["ai", "security", "open-source", "clawdbot", "openclaw", "anthropic", "vulnerabilities", "analysis"]
 featured: true
 draft: false
-readTime: 12
 ---
 
 ## What Happened

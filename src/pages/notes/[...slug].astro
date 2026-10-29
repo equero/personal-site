@@ -1,8 +1,8 @@
 ---
 import { render } from "astro:content";
-import BaseLayout from "@layouts/base-layout.astro";
-import { siteConfig } from "@site-config";
-import { getAllNoteEntries } from "@utils/note";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { siteConfig } from "@/site.config";
+import { getAllNoteEntries } from "@/utils/note";
 
 export async function getStaticPaths() {
   const notes = await getAllNoteEntries();

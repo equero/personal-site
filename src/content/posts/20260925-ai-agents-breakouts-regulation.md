@@ -6,7 +6,6 @@ description: "This summer OpenAI's agents broke into Hugging Face and Anthropic'
 tags: ["ai", "anthropic", "openai", "ai-safety", "security", "regulation", "opinion"]
 featured: true
 draft: false
-readTime: 14
 ---
 
 ## First, let's get the story right
