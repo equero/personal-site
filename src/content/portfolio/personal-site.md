@@ -11,8 +11,17 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.7.4"
+version: "1.8.0"
 changelog:
+  - version: "1.8.0"
+    date: "2026-10-29T00:00:00.000Z"
+    changes:
+      - "Every post now gets its own share image for X, LinkedIn and other sites, generated automatically at build time"
+      - "Read time is now calculated from each post's word count instead of being set by hand"
+      - "The posts RSS feed now includes the full article, not just the summary"
+      - "Rewrote the README with a feature list and a guide for anyone who wants to reuse the project"
+      - "Switched to pnpm and simplified imports to a single @/ alias"
+      - "Published a blog post on the coding interview losing its signal"
   - version: "1.7.4"
     date: "2026-10-27T00:00:00.000Z"
     changes:
