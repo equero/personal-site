@@ -6,7 +6,6 @@ description: "Mrinank Sharma, head of Anthropic's safeguards team, dropped a cry
 tags: ["ai", "anthropic", "claude", "analysis", "opinion"]
 featured: true
 draft: false
-readTime: 7
 ---
 
 ## What the Hell Just Happened

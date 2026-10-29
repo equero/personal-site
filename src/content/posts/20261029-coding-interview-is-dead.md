@@ -6,7 +6,6 @@ description: "Two months ago I called the LeetCode loop a toll booth that measur
 tags: ["opinion", "industry", "hiring", "interviews", "leetcode", "careers", "ai", "anthropic"]
 featured: true
 draft: false
-readTime: 8
 ---
 
 ## I said one meeting. Somebody had the meeting.

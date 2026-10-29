@@ -6,7 +6,6 @@ description: "The industry asks candidates to grind algorithm puzzles for months
 tags: ["opinion", "industry", "hiring", "interviews", "leetcode", "careers"]
 featured: true
 draft: false
-readTime: 12
 updatedDate: "2026-10-29T10:00:00.000Z"
 ---
 

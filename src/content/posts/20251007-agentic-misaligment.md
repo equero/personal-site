@@ -6,7 +6,6 @@ description: "An exploration (with healthy panic included) of Anthropic's study 
 tags: ["ai", "anthropic", "ai-safety", "alignment", "agentic-ai", "deception", "humor", "ironic", "opinion", "apocalypse", "satire"]
 featured: true
 draft: false
-readTime: 15
 ---
 
 ## The Day AI Discovered Lying Is Efficient

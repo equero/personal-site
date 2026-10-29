@@ -6,7 +6,6 @@ description: "The complaint isn't that the remaining problems are boring - borin
 tags: ["opinion", "industry", "computer-science", "open-source", "ai", "economics"]
 featured: true
 draft: false
-readTime: 13
 ---
 
 ## The complaint, stated properly

@@ -6,7 +6,6 @@ description: "Marc Andreessen says programmers have stopped sleeping to babysit 
 tags: ["ai", "opinion", "industry", "andreessen", "clickup", "burnout", "analysis"]
 featured: true
 draft: false
-readTime: 10
 ---
 
 ## The Vampires Are Out

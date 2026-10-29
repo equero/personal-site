@@ -17,9 +17,32 @@ function sortByDate(posts: CollectionEntry<"posts">[]): CollectionEntry<"posts">
   );
 }
 
+const WORDS_PER_MINUTE = 200;
+
+/**
+ * Estimates the reading time of a Markdown body. Link URLs are dropped first so
+ * they don't count as words.
+ *
+ * @param markdown - Raw Markdown body of a post.
+ * @returns Whole minutes, at least 1.
+ */
+export function estimateReadTime(markdown: string): number {
+  const text = markdown.replace(/\]\([^)]*\)/g, "]");
+  const words = text.match(/\S+/g)?.length ?? 0;
+  return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));
+}
+
+// A readTime set in frontmatter wins over the estimate.
+function withReadTime(post: CollectionEntry<"posts">): CollectionEntry<"posts"> {
+  return {
+    ...post,
+    data: { ...post.data, readTime: post.data.readTime ?? estimateReadTime(post.body ?? "") },
+  };
+}
+
 async function getRawPosts(): Promise<CollectionEntry<"posts">[]> {
   try {
-    return await getCollection("posts");
+    return (await getCollection("posts")).map(withReadTime);
   } catch (error) {
     if (import.meta.env.DEV) {
       console.error("Error fetching posts collection:", error);

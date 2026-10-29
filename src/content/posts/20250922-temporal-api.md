@@ -6,7 +6,6 @@ description: "A comprehensive guide to JavaScript's new Temporal API - finally f
 tags: ["javascript", "temporal", "ecmascript", "web development", "dates", "timezone", "api", "frontend", "tutorial"]
 featured: true
 draft: false
-readTime: 15
 ---
 
 ## Why Date Has Failed Us

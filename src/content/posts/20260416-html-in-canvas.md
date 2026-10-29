@@ -6,7 +6,6 @@ description: "Theres a new WICG proposal that lets you draw real HTML elements i
 tags: ["html", "canvas", "web standards", "frontend", "web development", "wicg"]
 featured: true
 draft: false
-readTime: 15
 ---
 
 ## The two worlds problem
