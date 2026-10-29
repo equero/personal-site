@@ -401,7 +401,7 @@ describe("portfolioUtils", () => {
       expect(featuredSortedResult[1].featured).toBe(false);
     });
 
-    it("should sort by order only when sorted=true and sortByFeatured=false", async () => {
+    it("should put featured projects first when sorted=false and sortByFeatured=true", async () => {
       const mockProjects = [
         {
           id: "project-1",

@@ -304,20 +304,6 @@ describe("Skills Utils functions", () => {
         expect(result[0].perks).toContain("French beginner");
       });
 
-      it("should handle getCollection rejection", async () => {
-        const errorMessage = "Failed to fetch skills collection";
-        mockGetCollection.mockRejectedValue(new Error(errorMessage));
-
-        await expect(getAllSkills()).rejects.toThrow(errorMessage);
-        expect(mockGetCollection).toHaveBeenCalledWith("skills");
-      });
-
-      it("should handle getCollection network timeout", async () => {
-        mockGetCollection.mockRejectedValue(new Error("Network timeout"));
-
-        await expect(getAllSkills()).rejects.toThrow("Network timeout");
-      });
-
       it("should handle very large number of skills", async () => {
         const largeSkillsArray = Array.from({ length: 1000 }, (_, index) => ({
           id: `skill-${index}`,

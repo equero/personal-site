@@ -6,8 +6,7 @@ import rss from "@astrojs/rss";
  * Astro GET endpoint that generates the RSS feed for the latest blog posts.
  *
  * Fetches the 20 most recent published posts and maps them to RSS items,
- * including optional fields such as tags (as categories), read time, and
- * last updated date when available.
+ * with tags as categories.
  *
  * @returns An RSS response object for the `/posts/rss.xml` route.
  */
@@ -25,9 +24,7 @@ export async function GET() {
       pubDate: new Date(post.data.publishDate),
       link: `/posts/${post.data.slug}/`,
       categories: post.data.tags || [],
-      readTime: post.data.readTime,
-      updatedDate: post.data.updatedDate,
     })),
-    customData: "<language>en-us</language>",
+    customData: `<language>${siteConfig.locale.toLowerCase()}</language>`,
   });
 }

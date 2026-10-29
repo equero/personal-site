@@ -23,6 +23,6 @@ export async function GET() {
       pubDate: new Date(note.publishDate),
       link: `/notes/${note.slug}/`,
     })),
-    customData: "<language>en-us</language>",
+    customData: `<language>${siteConfig.locale.toLowerCase()}</language>`,
   });
 }

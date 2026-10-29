@@ -13,6 +13,7 @@ vi.mock("@/site.config", () => ({
     authorName: "Test Author",
     jobTitle: "Developer",
     siteUrl: "https://example.com",
+    locale: "en-US",
   },
 }));
 
