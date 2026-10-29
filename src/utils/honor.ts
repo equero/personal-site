@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import type { Honor } from "@types";
+import type { Honor } from "@/types";
 
 // Year field may be a range (e.g. "2021-2023"); sorting uses the first year only.
 function compareByFirstYearDesc(a: Honor, b: Honor): number {

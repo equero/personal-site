@@ -1,4 +1,4 @@
-import type { ActivityBucket, ActivityPoint, ActivityWindow, Pulse } from "@types";
+import type { ActivityBucket, ActivityPoint, ActivityWindow, Pulse } from "@/types";
 
 const DAY_MS = 86_400_000;
 

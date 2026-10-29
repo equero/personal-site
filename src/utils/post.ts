@@ -1,5 +1,5 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import { isValidDate } from "./date";
+import { isValidDate } from "@/utils/date";
 
 /**
  * Filters out draft posts from an array.

@@ -1,10 +1,10 @@
 ---
-import PrintLayout from "@layouts/print-layout.astro";
-import { siteConfig } from "@site-config";
-import { calculateDuration } from "@utils/date";
-import { getAllHonorsGroupByCategory } from "@utils/honor";
-import { getAllWorkExperiences, getWorkExperienceYears } from "@utils/resume";
-import { getAllSkills } from "@utils/skills";
+import PrintLayout from "@/layouts/print-layout.astro";
+import { siteConfig } from "@/site.config";
+import { calculateDuration } from "@/utils/date";
+import { getAllHonorsGroupByCategory } from "@/utils/honor";
+import { getAllWorkExperiences, getWorkExperienceYears } from "@/utils/resume";
+import { getAllSkills } from "@/utils/skills";
 
 const work_experience = await getAllWorkExperiences();
 const years = await getWorkExperienceYears();

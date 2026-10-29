@@ -1,11 +1,11 @@
 ---
-import ActivityChart from "@components/activity-chart.astro";
-import ChevronDownIcon from "@icons/chevron-down.svg";
-import CloseIcon from "@icons/close.svg";
-import LockIcon from "@icons/lock.svg";
-import BaseLayout from "@layouts/base-layout.astro";
-import { siteConfig } from "@site-config";
-import { getAllProjects, getChangelogActivity } from "@utils/portfolio";
+import ActivityChart from "@/components/activity-chart.astro";
+import ChevronDownIcon from "@/icons/chevron-down.svg";
+import CloseIcon from "@/icons/close.svg";
+import LockIcon from "@/icons/lock.svg";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { siteConfig } from "@/site.config";
+import { getAllProjects, getChangelogActivity } from "@/utils/portfolio";
 
 const statusRank = { wip: 0, active: 1, archived: 2 } as const;
 
@@ -265,5 +265,5 @@ const statusBadges = {
 </BaseLayout>
 
 <script>
-  import "@scripts/portfolio";
+  import "@/scripts/portfolio";
 </script>

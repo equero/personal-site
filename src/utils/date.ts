@@ -1,4 +1,4 @@
-import { siteConfig } from "@site-config";
+import { siteConfig } from "@/site.config";
 
 /**
  * Checks if a date string or Date object is valid

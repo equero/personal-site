@@ -1,4 +1,4 @@
-import { calculatePagination, getPageRange } from "@utils/pagination";
+import { calculatePagination, getPageRange } from "@/utils/pagination";
 
 class PaginationComponent {
   private currentPage = 1;
