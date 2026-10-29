@@ -7,7 +7,10 @@ tags: ["opinion", "industry", "hiring", "interviews", "leetcode", "careers"]
 featured: true
 draft: false
 readTime: 12
+updatedDate: "2026-10-29T10:00:00.000Z"
 ---
+
+> **Update, October 2026:** It happened. An engineer at Anthropic removed the coding interview from their team's loops because it "no longer provides signal". I wrote about it in [The Coding Interview Is Dead, and a Model Killed It](/posts/coding-interview-is-dead/).
 
 ## The ritual
 
