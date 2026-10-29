@@ -95,7 +95,6 @@ const posts = defineCollection({
     publishDate: dateString,
     slug: z.string(),
     description: z.string(),
-    content: z.string().optional(),
     tags: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
