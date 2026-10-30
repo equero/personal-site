@@ -22,7 +22,7 @@ Now [Ripple](https://www.ripplejs.com/) has joined this already crowded space, p
 
 ## The Irony of a Framework Veteran Building Yet Another Framework
 
-Here's where things get really ironic. Ripple was created by Dominic Gannaway ([@trueadm](https://github.com/trueadm)), and his background reads like a history book of modern JavaScript frameworks. **This isn't some random developer working on a weekend project.** Gannaway was actually part of the React core team, where he worked on React Hooks. He created Lexical, which is Meta's extensible text editor framework. He was involved with Inferno from the very beginning. Most recently, he was working as a core maintainer of Svelte 5 at Vercel, dealing with its new compiler and signal-based reactivity stuff.
+Now for the ironic part. Ripple was created by Dominic Gannaway ([@trueadm](https://github.com/trueadm)), and his background reads like a history book of modern JavaScript frameworks. **This isn't some random developer working on a weekend project.** Gannaway was actually part of the React core team, where he worked on React Hooks. He created Lexical, which is Meta's extensible text editor framework. He was involved with Inferno from the very beginning. Most recently, he was working as a core maintainer of Svelte 5 at Vercel, dealing with its new compiler and signal-based reactivity stuff.
 
 What do you think someone with his background does when they have free time?
 
@@ -80,7 +80,7 @@ Maybe AI should build its own framework so it can experience the same frustratio
 
 ## The Bottom Line
 
-Here's the thing. RippleJS might actually be amazing. It could genuinely combine the best parts of React, Solid, and Svelte like its creator says. But that's not the real issue here. We need to stop constantly reinventing the wheel and focus on what actually matters. Building reliable applications that work well for our users.
+Here's the thing. RippleJS might actually be amazing. It could combine the best parts of React, Solid, and Svelte like its creator says. But that's not the real issue here. We need to stop constantly reinventing the wheel and focus on what actually matters. Building reliable applications that work well for our users.
 
 Backend developers figured this out a long time ago. They have stable, mature tools that evolve gradually. Python has Django and Flask. Java has Spring. Ruby has Rails. They get better over time without making you rewrite everything every few years. Meanwhile, we're still arguing about React vs Vue vs Svelte vs now Ripple.
 
