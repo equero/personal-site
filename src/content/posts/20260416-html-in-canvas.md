@@ -18,7 +18,7 @@ And until now, every solution to this problem has been some flavor of terrible.
 
 ## The old hacks (and why they suck)
 
-If youve ever needed HTML inside a canvas, you probably stumbled into one of these approaches. I certainly have.
+If you've ever needed HTML inside a canvas, you probably stumbled into one of these approaches. I certainly have.
 
 ### The foreignObject trick
 
@@ -39,15 +39,15 @@ img.src = URL.createObjectURL(blob);
 img.onload = () => ctx.drawImage(img, 0, 0);
 ```
 
-Clever? Yes. Reliable? Absolutely not. External stylesheets are gone. Fonts dont load. Images break unless you convert everything to base64 data URIs. Pseudo-elements vanish because they dont exist in the DOM. CORS taints the canvas the moment anything cross-origin touches it. Safari renders half the CSS properties differently or not at all.
+Clever? Yes. Reliable? Absolutely not. External stylesheets are gone. Fonts don't load. Images break unless you convert everything to base64 data URIs. Pseudo-elements vanish because they don't exist in the DOM. CORS taints the canvas the moment anything cross-origin touches it. Safari renders half the CSS properties differently or not at all.
 
 I once spent an entire afternoon debugging why a component looked "almost right" in the canvas export. Turned out the `::after` pseudo-element was doing 40% of the visual work.
 
 ### html2canvas and friends
 
-[html2canvas](https://html2canvas.hertzen.com/) re-implements the browsers rendering engine in JavaScript. It reads the DOM, computes styles, and draws everything manually using canvas API calls. The results cover about 80% of CSS, which sounds great until you realize the other 20% is always the part your designer cares about. Its also essentially unmaintained.
+[html2canvas](https://html2canvas.hertzen.com/) re-implements the browsers rendering engine in JavaScript. It reads the DOM, computes styles, and draws everything manually using canvas API calls. The results cover about 80% of CSS, which sounds great until you realize the other 20% is always the part your designer cares about. It's also essentially unmaintained.
 
-[modern-screenshot](https://github.com/qq15725/modern-screenshot) improves on the `foreignObject` approach by automatically inlining styles, fonts, and images. Better, but still fundamentally limited by the same constraints.
+[modern-screenshot](https://github.com/qq15725/modern-screenshot) improves on the `foreignObject` approach by automatically inlining styles, fonts, and images. Better, but still stuck with the same limits.
 
 [satori](https://github.com/vercel/satori) takes the opposite approach - you write JSX with a restricted CSS subset, and it converts it directly to SVG. It powers OG image generation in Next.js. Smart tradeoff: limited scope, but what it supports works perfectly.
 
@@ -57,7 +57,7 @@ All of these are creative workarounds for a platform-level gap. None of them giv
 
 The [WICG HTML-in-Canvas proposal](https://github.com/WICG/html-in-canvas) is a proper web standard being incubated that would let you draw real, live HTML elements into 2D and 3D canvas contexts. Not serialized snapshots. Not re-implementations. The actual browser-rendered elements, with full CSS support, layout, and interactivity.
 
-Its already implemented behind a flag in Chromium (`chrome://flags/#canvas-draw-element`). You can try it today.
+It's already implemented behind a flag in Chromium (`chrome://flags/#canvas-draw-element`). You can try it today.
 
 The core idea has three parts: a new attribute, a new drawing method, and a new event.
 
@@ -139,11 +139,11 @@ canvas.onpaint = (event) => {
 
 The event fires once per frame, right after the browsers paint step. It gives you the list of changed elements so you can optimize what you redraw. DOM modifications inside the paint handler apply to the next frame, not the current one - no infinite loops, no accidental recursion.
 
-Theres also `canvas.requestPaint()` for when you need to force a repaint, giving you `requestAnimationFrame`-like control when you need it.
+There's also `canvas.requestPaint()` for when you need to force a repaint, giving you `requestAnimationFrame`-like control when you need it.
 
 ## The 3D angle: WebGL and WebGPU
 
-This is where things get genuinely exciting. The proposal includes APIs for using HTML as textures in WebGL and WebGPU scenes.
+This is the part that excites me. The proposal includes APIs for using HTML as textures in WebGL and WebGPU scenes.
 
 ### WebGL
 
@@ -152,7 +152,7 @@ const gl = canvas.getContext('webgl2');
 gl.texElementImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, element);
 ```
 
-Thats HTML on a 3D surface. A live, interactive form on the side of a rotating cube. A CSS-styled tooltip floating in a 3D scene. Game UI rendered by the browser's actual layout engine instead of a custom text renderer that only supports half of Unicode.
+That's HTML on a 3D surface. A live, interactive form on the side of a rotating cube. A CSS-styled tooltip floating in a 3D scene. Game UI rendered by the browser's actual layout engine instead of a custom text renderer that only supports half of Unicode.
 
 ### WebGPU
 
@@ -169,21 +169,21 @@ The theory is cool, but the demos are what really sell this. People have been bu
 
 ### Doom with HTML forms inside
 
-Yes, you read that right. Theres a [demo](https://niccolli.github.io/niccolli/drawElementImage-demos/doom/) running Doom in a canvas - nothing new there - but with an HTML form rendered inside the game world. A real `<form>` with `<input>` fields. You can click on it, type your name, select the text, copy and paste it. The form lives in the DOM, participates in the accessibility tree, and responds to all standard JavaScript events. But visually its inside a first-person shooter.
+Yes, you read that right. There's a [demo](https://niccolli.github.io/niccolli/drawElementImage-demos/doom/) running Doom in a canvas - nothing new there - but with an HTML form rendered inside the game world. A real `<form>` with `<input>` fields. You can click on it, type your name, select the text, copy and paste it. The form lives in the DOM, participates in the accessibility tree, and responds to all standard JavaScript events. But visually it's inside a first-person shooter.
 
-Let that sink in. Before this proposal, you could simulate a text input in canvas by manually tracking keystrokes, drawing glyphs, managing cursor position and selection ranges yourself. People have done this. Its hundreds of lines of fragile code for something that HTML gives you for free. Now you just put an `<input>` inside the canvas and it works.
+Before this proposal, you could simulate a text input in canvas by manually tracking keystrokes, drawing glyphs, managing cursor position and selection ranges yourself. People have done this. It's hundreds of lines of fragile code for something that HTML gives you for free. Now you just put an `<input>` inside the canvas and it works.
 
 ### Wes Bos's destructible editor
 
-Wes Bos built a demo where you have editable HTML content inside a canvas - text, buttons, inputs - and you can literally explode it. The elements shatter into pieces with physics, flying across the screen. But heres the thing: you can still click the fragments. You can click a button mid-explosion and it fires its click handler. You can focus an input thats tumbling through space and type into it.
+Wes Bos built a demo where you have editable HTML content inside a canvas - text, buttons, inputs - and you can literally explode it. The elements shatter into pieces with physics, flying across the screen. But here's the thing: you can still click the fragments. You can click a button mid-explosion and it fires its click handler. You can focus an input that's tumbling through space and type into it.
 
 This is the kind of thing that was theoretically possible before by overlaying invisible DOM elements on top of canvas and painstakingly syncing their positions frame by frame. In practice, nobody did it because the synchronization was a nightmare. Now the browser handles it natively.
 
 ### 3D rooms with live web content
 
-One of the WebGL demos renders a full 3D room - walls, lighting, perspective - with HTML content mapped onto surfaces as textures. Forms on the walls. Buttons you can click. Text you can select. Its not a flat screenshot of HTML pasted onto a polygon. Its live, interactive content inside a 3D scene.
+One of the WebGL demos renders a full 3D room - walls, lighting, perspective - with HTML content mapped onto surfaces as textures. Forms on the walls. Buttons you can click. Text you can select. It's not a flat screenshot of HTML pasted onto a polygon. It's live, interactive content inside a 3D scene.
 
-Imagine this for VR and AR applications. WebXR already lets you build immersive experiences in the browser, but UI inside those experiences has always been painful. You either build custom 3D UI systems from scratch or break immersion by overlaying flat HTML on top. With HTML-in-Canvas + WebGPU, you could have native web forms, buttons, and text rendered directly on surfaces in a 3D space. Thats a massive deal for the spatial web.
+Imagine this for VR and AR applications. WebXR already lets you build immersive experiences in the browser, but UI inside those experiences has always been painful. You either build custom 3D UI systems from scratch or break immersion by overlaying flat HTML on top. With HTML-in-Canvas + WebGPU, you could have native web forms, buttons, and text rendered directly on surfaces in a 3D space. That's a massive deal for the spatial web.
 
 ### A full Web OS
 
@@ -195,7 +195,7 @@ Before this, building something like this meant choosing between two bad options
 
 ### Creative tools (Figma, Canva, Miro)
 
-Right now, canvas-based editors overlay invisible HTML elements on top of the canvas and manually sync their positions. Its fragile. Scroll events, zoom levels, transforms - everything has to be synchronized by hand, and it breaks in subtle ways all the time.
+Right now, canvas-based editors overlay invisible HTML elements on top of the canvas and manually sync their positions. It's fragile. Scroll events, zoom levels, transforms - everything has to be synchronized by hand, and it breaks in subtle ways all the time.
 
 With `drawElementImage`, the HTML is part of the canvas draw calls. You position it with the same transform matrix as everything else. Zoom works. Pan works. The element's hit testing automatically stays in sync because of the returned `DOMMatrix`.
 
@@ -223,7 +223,7 @@ canvas.onpaint = () => {
 
 ### Games with native UI
 
-Game developers on the web have always had to choose: canvas for rendering, HTML for UI. Most games end up with a hybrid approach - canvas for the game world, HTML overlays for menus, chat, inventory screens. The two layers dont interact, and keeping them aligned is a constant headache.
+Game developers on the web have always had to choose: canvas for rendering, HTML for UI. Most games end up with a hybrid approach - canvas for the game world, HTML overlays for menus, chat, inventory screens. The two layers don't interact, and keeping them aligned is a constant headache.
 
 With this proposal, you could render your game on canvas and have actual HTML forms, buttons, and text inside the game world. The Doom demo proves this works. Imagine an MMO where the chat window is a real `<textarea>`, item descriptions are real HTML with links, and settings panels are real forms - all rendered inside the game canvas with 3D effects applied.
 
@@ -233,11 +233,11 @@ The proposal directly enables exporting HTML content as images or video frames. 
 
 ### Accessibility and SEO
 
-This might be the most important angle. Canvas content has always been a black box. Screen readers see a `<canvas>` element and nothing else. Search engines cant index canvas-rendered text. The typical workaround is fallback content that doesnt match whats actually rendered, which is worse than useless.
+This might be the most important angle. Canvas content has always been a black box. Screen readers see a `<canvas>` element and nothing else. Search engines can't index canvas-rendered text. The typical workaround is fallback content that doesn't match what's actually rendered, which is worse than useless.
 
-With `layoutsubtree`, the HTML elements inside the canvas are real DOM nodes. They show up in the accessibility tree. Screen readers can navigate them. Focus management works. ARIA attributes work. And search engines can read the content because its actual HTML in the DOM.
+With `layoutsubtree`, the HTML elements inside the canvas are real DOM nodes. They show up in the accessibility tree. Screen readers can navigate them. Focus management works. ARIA attributes work. And search engines can read the content because it's actual HTML in the DOM.
 
-Before this, you could simulate a button in canvas. You could draw text that looks like a button, track click coordinates, and fire a handler when the click lands in the right rectangle. But it wasnt a button. It didnt show up in the tab order. Screen readers didnt announce it. Keyboard navigation didnt work. Now you put a `<button>` inside the canvas and everything just works. The declarative power of HTML, inside the visual power of canvas.
+Before this, you could simulate a button in canvas. You could draw text that looks like a button, track click coordinates, and fire a handler when the click lands in the right rectangle. But it wasn't a button. It didn't show up in the tab order. Screen readers didn't announce it. Keyboard navigation didn't work. Now you put a `<button>` inside the canvas and everything just works. The declarative power of HTML, inside the visual power of canvas.
 
 ## Privacy and security model
 
@@ -245,27 +245,27 @@ The proposal explicitly excludes sensitive information from rendering. Cross-ori
 
 What does render: search highlights, scrollbar appearance, form element styles, and forced colors mode. The line is drawn at "things that could leak user-specific information across origins."
 
-## The catch: its still early
+## The catch: it's still early
 
-Lets be real about the state of things. The proposal is in WICG incubation. Chromium has it behind a flag (`chrome://flags/#canvas-draw-element`). Firefox and Safari havent announced anything. The spec is being actively iterated on, and the contributors are mostly from the Chromium and Igalia teams.
+Let's be real about the state of things. The proposal is in WICG incubation. Chromium has it behind a flag (`chrome://flags/#canvas-draw-element`). Firefox and Safari haven't announced anything. The spec is being actively iterated on, and the contributors are mostly from the Chromium and Igalia teams.
 
-This is not something you ship to production today. It needs buy-in from Mozilla and Apple to become a real web standard, and thats never guaranteed. But its also not vaporware. Theres a [working implementation](https://github.com/niccolli/niccolli.github.io/tree/main/niccolli/drawElementImage-demos), the API design is solid, and the use cases are compelling enough that I expect this to move forward.
+This is not something you ship to production today. It needs buy-in from Mozilla and Apple to become a real web standard, and that's never guaranteed. But it's also not vaporware. There's a [working implementation](https://github.com/niccolli/niccolli.github.io/tree/main/niccolli/drawElementImage-demos), the API design is solid, and the use cases are compelling enough that I expect this to move forward.
 
 The demos are worth trying if you enable the flag in Chrome Canary: complex text rotation, pie charts with styled labels, a WebGPU jelly slider effect with HTML under shader effects, Doom with HTML forms, a full web OS, and interactive 3D rooms.
 
 ## What to use right now
 
-Until HTML-in-Canvas ships, the workaround landscape hasnt changed:
+Until HTML-in-Canvas ships, the workaround landscape hasn't changed:
 
 - **OG images and social cards**: [satori](https://github.com/vercel/satori) is the best option. Restricted CSS subset but perfect output.
 - **DOM screenshots**: [modern-screenshot](https://github.com/qq15725/modern-screenshot) handles the `foreignObject` pipeline with automatic inlining.
 - **Pixel-perfect captures**: Puppeteer or Playwright. Heavy, but nothing else matches the fidelity.
 - **Canvas-based text**: Deal with the limitations or use SVG instead.
 
-But keep an eye on `drawElementImage`. If it lands in browsers, it obsoletes most of the above. The `foreignObject` hack, html2canvas, the invisible overlay pattern - all of them exist because the platform didnt have a proper answer. Now it might.
+But keep an eye on `drawElementImage`. If it lands in browsers, it obsoletes most of the above. The `foreignObject` hack, html2canvas, the invisible overlay pattern - all of them exist because the platform didn't have a proper answer. Now it might.
 
 The web has a long history of hacky userland solutions eventually being replaced by proper platform APIs. `jQuery.ajax` became `fetch`. CSS-in-JS became `@scope` and cascade layers. `foreignObject`-in-canvas might become `drawElementImage`.
 
-And the timing feels right. Were moving into a world where spatial computing, AR glasses, and immersive web experiences are becoming real products, not just demos. Having native HTML inside canvas - accessible, interactive, compositable with 3D effects - isnt just a nice-to-have anymore. Its infrastructure for whats next.
+And the timing feels right. Were moving into a world where spatial computing, AR glasses, and immersive web experiences are becoming real products, not just demos. Having native HTML inside canvas - accessible, interactive, compositable with 3D effects - isn't just a nice-to-have anymore. It's infrastructure for what's next.
 
-Im here for it.
+I'm here for it.

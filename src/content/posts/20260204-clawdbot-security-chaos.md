@@ -20,7 +20,7 @@ The problem he wanted to solve was simple: AI coding agents like Claude Code som
 
 Clawdbot is a local AI assistant you control through messaging apps - WhatsApp, Telegram, iMessage. Unlike cloud assistants, everything runs on your machine. You text it commands like "check my calendar" or "respond to that email from John" and it executes them through whatever LLM you configure.
 
-The privacy angle is genuinely interesting. No corporate servers storing your conversations. No data being harvested for ads. Your AI assistant lives on hardware you control. I actually like this idea a lot.
+The privacy angle is interesting. No corporate servers storing your conversations. No data being harvested for ads. Your AI assistant lives on hardware you control. I actually like this idea a lot.
 
 The problem is what "runs on your machine" actually means in practice. Spoiler: it's not great.
 
@@ -34,7 +34,7 @@ Within hours, fake $CLAWD tokens launched on Solana. Market cap hit $16 million 
 
 DHH called Anthropic's trademark move "customer hostile" since Clawdbot was driving significant Claude API usage. The project eventually settled on "OpenClaw" as its permanent name.
 
-I dont have strong feelings about the trademark dispute itself. Companies protect their trademarks or they lose them. But the timing created an opening that bad actors exploited immediately. Thats worth noting for anyone planning a public rebrand.
+I don't have strong feelings about the trademark dispute itself. Companies protect their trademarks or they lose them. But the timing created an opening that bad actors exploited immediately. That's worth noting for anyone planning a public rebrand.
 
 ## The Security Problems
 
@@ -117,7 +117,7 @@ In a [Pragmatic Engineer interview](https://newsletter.pragmaticengineer.com/p/t
 
 This approach works for plenty of projects. CRUD apps, internal tools, prototypes - sure, vibe away. But Clawdbot operates with full user privileges, handles credentials, and accepts commands from external messaging platforms. The attack surface is massive. You can't "vibe" your way through security-sensitive code. Someone has to actually read it.
 
-Look, I'm not trying to pile on Steinberger. He built something people clearly wanted - 82,000 stars dont happen by accident. The guy sold a successful company and came back because he was bored. I respect that. And the vulnerabilities discovered are the kind that emerge when projects scale way faster than anyone anticipated. But man, "I ship code I don't read" is a hell of a philosophy when that code can execute arbitrary commands on someone's machine.
+Look, I'm not trying to pile on Steinberger. He built something people clearly wanted - 82,000 stars don't happen by accident. The guy sold a successful company and came back because he was bored. I respect that. And the vulnerabilities discovered are the kind that emerge when projects scale way faster than anyone anticipated. But man, "I ship code I don't read" is a hell of a philosophy when that code can execute arbitrary commands on someone's machine.
 
 ## What Security Researchers Recommend
 
@@ -136,11 +136,11 @@ Cisco's security team described it as a potential "security nightmare." Palo Alt
 
 ## Looking Forward
 
-Here's the thing - the underlying concept actually has merit. Local AI assistants that dont ship your data to corporate servers could be genuinely better for privacy. I want this future! I just don't want it to come with free remote code execution for anyone who finds my IP address.
+Here's the thing - the underlying concept actually has merit. Local AI assistants that don't ship your data to corporate servers could be better for privacy. I want this future! I just don't want it to come with free remote code execution for anyone who finds my IP address.
 
-The Clawdbot situation is probably a preview of whats coming as more AI agents get deployed with system-level access. We're going to see a lot more of these. The gap between "cool demo on Twitter" and "production-ready security model" is massive, and most users cant tell the difference until it's too late.
+The Clawdbot situation is probably a preview of what's coming as more AI agents get deployed with system-level access. We're going to see a lot more of these. The gap between "cool demo on Twitter" and "production-ready security model" is massive, and most users can't tell the difference until it's too late.
 
-For now, the 82,000 GitHub stars represent enthusiasm, not a security audit. Those really, really arent the same thing. Ask me how I know.
+For now, the 82,000 GitHub stars represent enthusiasm, not a security audit. Those really, really aren't the same thing. Ask me how I know.
 
 ---
 

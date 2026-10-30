@@ -10,11 +10,11 @@ draft: false
 
 ## The Eternal Corner Problem
 
-Weve been stuck with `border-radius` for what feels like forever. Rounded corners? Easy. Perfect circle? `border-radius: 50%` done. But try to make something interesting - an Apple-style squircle, a hexagon, beveled edges - and suddenly youre knee deep in SVG paths, `clip-path` coordinates, or stacking pseudo-elements like some kind of CSS archaeologist reconstructing ancient artifacts.
+We've been stuck with `border-radius` for what feels like forever. Rounded corners? Easy. Perfect circle? `border-radius: 50%` done. But try to make something interesting - an Apple-style squircle, a hexagon, beveled edges - and suddenly you're knee deep in SVG paths, `clip-path` coordinates, or stacking pseudo-elements like some kind of CSS archaeologist reconstructing ancient artifacts.
 
 I once spent four hours trying to make a button look like the iOS app icons. Four hours. For a button. I ended up using a PNG because I ran out of patience and my designer was asking why it was taking so long. Not my proudest moment.
 
-But someone at the [CSS Working Group](https://www.w3.org/Style/CSS/) finally decided to help us out. Meet `corner-shape`, the property that shouldve existed in 2010.
+But someone at the [CSS Working Group](https://www.w3.org/Style/CSS/) finally decided to help us out. Meet `corner-shape`, the property that should've existed in 2010.
 
 The concept is simple: `border-radius` controls the **size** of the corner, `corner-shape` controls the **shape**. They work together. Like salt and pepper, or me and coffee after midnight when I'm debugging CSS.
 
@@ -29,7 +29,7 @@ The concept is simple: `border-radius` controls the **size** of the corner, `cor
 }
 ```
 
-Two lines. Thats a squircle. No SVG, no hacks, no selling your soul.
+Two lines. That's a squircle. No SVG, no hacks, no selling your soul.
 
 The spec lives in [CSS Borders and Box Decorations Level 4](https://drafts.csswg.org/css-backgrounds-4/#corner-shaping), still Editor's Draft but Chrome and Edge already support it. More on browser support later.
 
@@ -39,7 +39,7 @@ The spec lives in [CSS Borders and Box Decorations Level 4](https://drafts.csswg
 
 $|x/a|^n + |y/b|^n = 1$
 
-Where `n` is what determines the curve. The CSS keywords are shortcuts to specific `n` values. You dont need to remember this, but its useful if you want to understand why the curves look the way they do.
+Where `n` is what determines the curve. The CSS keywords are shortcuts to specific `n` values. You don't need to remember this, but it's useful if you want to understand why the curves look the way they do.
 
 <div class="grid grid-cols-3 md:grid-cols-6 gap-4 my-6">
   <div class="flex flex-col items-center gap-2">
@@ -91,7 +91,7 @@ Where `n` is what determines the curve. The CSS keywords are shortcuts to specif
 
 ### The superellipse() function
 
-If the keywords arent enough, use `superellipse(n)` directly with any number:
+If the keywords aren't enough, use `superellipse(n)` directly with any number:
 
 <div class="flex justify-center gap-4 my-6">
   <div class="flex flex-col items-center gap-2">
@@ -164,7 +164,7 @@ For when you need maximum control:
 }
 ```
 
-Theres also logical properties for RTL layouts:
+There's also logical properties for RTL layouts:
 
 ```css
 .logical-corners {
@@ -178,7 +178,7 @@ Theres also logical properties for RTL layouts:
 
 ### Interactive demo
 
-Play with this slider to see how `superellipse()` transforms corners in real time. Needs Chrome 139+ or Edge 139+ - if youre on Firefox or Safari youll just see a normal rounded box.
+Play with this slider to see how `superellipse()` transforms corners in real time. Needs Chrome 139+ or Edge 139+ - if you're on Firefox or Safari you'll just see a normal rounded box.
 
 <div class="bg-white/5 border border-white/10 rounded-xl p-6 my-6">
   <div class="flex flex-col items-center gap-5">
@@ -253,7 +253,7 @@ Play with this slider to see how `superellipse()` transforms corners in real tim
 
 ## Practical examples
 
-Alright enough theory. Lets make some stuff.
+Alright enough theory. Let's make some stuff.
 
 ### Discount tag
 
@@ -426,15 +426,15 @@ If you want conditional styling:
 }
 ```
 
-But honestly most of the time you dont need a fallback. Normal rounded corners are fine.
+But honestly most of the time you don't need a fallback. Normal rounded corners are fine.
 
 ## The bottom line
 
-Before `corner-shape` we had SVG (flexible but complex), `clip-path` (clips borders and shadows too), pseudo-elements (hackery), or images (dont scale, extra HTTP requests).
+Before `corner-shape` we had SVG (flexible but complex), `clip-path` (clips borders and shadows too), pseudo-elements (hackery), or images (don't scale, extra HTTP requests).
 
-Now its one CSS property. Borders, shadows, backgrounds all follow the shape automatically. Fully animatable. No performance overhead.
+Now it's one CSS property. Borders, shadows, backgrounds all follow the shape automatically. Fully animatable. No performance overhead.
 
-CSS keeps getting better. We dont need SVG or JavaScript for visual effects that should be native. A hexagon shouldnt require calculating polygon coordinates. A button that looks like an iOS icon shouldnt take four hours.
+CSS keeps getting better. We don't need SVG or JavaScript for visual effects that should be native. A hexagon shouldn't require calculating polygon coordinates. A button that looks like an iOS icon shouldn't take four hours.
 
 Once Firefox and Safari catch up this will probably be as common as `border-radius` itself.
 

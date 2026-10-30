@@ -10,7 +10,7 @@ draft: false
 
 ## I said one meeting. Somebody had the meeting.
 
-Back in August I wrote [A Year of LeetCode for a Job You Will Never Use It In](/posts/tech-interviews-leetcode-theater/). Long post, lots of angry footnotes. The short version: we make people grind algorithm puzzles for months, the research says the format mostly measures how you handle being watched, and in 2026 those puzzles are the one part of the job a model does perfectly.
+Back in August I wrote [A Year of LeetCode for a Job You Will Never Use It In](/posts/tech-interviews-leetcode-theater/). Long post, lots of angry footnotes. In short: we make people grind algorithm puzzles for months, the research says the format mostly measures how you handle being watched, and in 2026 those puzzles are the one part of the job a model does perfectly.
 
 I ended it saying the whole thing was "one meeting away from changing at any given company". Somebody just had to say it out loud.
 

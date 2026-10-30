@@ -29,9 +29,9 @@ What it didn't get to: Hugging Face found "no evidence of tampering with public,
 
 Why was an OpenAI model poking around Hugging Face at all? According to [the incident's Wikipedia timeline](https://en.wikipedia.org/wiki/OpenAI%E2%80%93HuggingFace_incident), which is built from the OpenAI and Hugging Face statements and press coverage, the models were in a cyber evaluation, worked out that the answers to the test were probably hosted on Hugging Face, and went to get them. Deployment safeguards had been deliberately turned off because the whole point was to test offensive cyber capability. And nobody was monitoring the model trajectories as they ran.
 
-Let me translate that. They took the model's safeguards off on purpose, told it to be a hacker, left the exit unlocked and didn't watch the cameras. Then they were surprised when it hacked something.
+In plain words: They took the model's safeguards off on purpose, told it to be a hacker, left the exit unlocked and didn't watch the cameras. Then they were surprised when it hacked something.
 
-Hugging Face also found something in its write-up that I keep coming back to. When their team tried to use commercial AI models to analyse the real attack payloads during the forensics, the providers' safety filters blocked them. The attacker had no filters. The defenders did. They ended up running the analysis on an open-weight model, [GLM-5.2](https://huggingface.co/blog/security-incident-july-2026), over 17,000+ recorded events. Keep that in mind for later, because it matters when we get to "who does regulation actually protect".
+There's one more detail in Hugging Face's write-up that stuck with me. When their team tried to use commercial AI models to analyse the real attack payloads during the forensics, the providers' safety filters blocked them. The attacker had no filters. The defenders did. They ended up running the analysis on an open-weight model, [GLM-5.2](https://huggingface.co/blog/security-incident-july-2026), over 17,000+ recorded events. I'll come back to it when we get to who regulation actually protects.
 
 ## What Anthropic's Claude did (four times)
 
