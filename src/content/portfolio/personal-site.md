@@ -11,8 +11,13 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.8.0"
+version: "1.8.1"
 changelog:
+  - version: "1.8.1"
+    date: "2026-11-03T00:00:00.000Z"
+    changes:
+      - "The blog list now shows one year at a time, with folder-style tabs to switch between years"
+      - "Back to Posts now returns to the year the post belongs to"
   - version: "1.8.0"
     date: "2026-10-29T00:00:00.000Z"
     changes:
