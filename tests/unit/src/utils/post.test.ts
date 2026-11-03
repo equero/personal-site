@@ -8,6 +8,8 @@ import {
   getLatestPosts,
   getPostsByTag,
   getPostsGroupedByYear,
+  getPostsYearUrl,
+  getPostYears,
 } from "@/utils/post";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -483,6 +485,39 @@ describe("postsUtils", () => {
       const [post] = await getAllPosts();
 
       expect(post.data.readTime).toBe(42);
+    });
+  });
+
+  describe("getPostYears", () => {
+    const postIn = (year: number) => ({
+      ...mockPostsCollectionEntries[0],
+      data: {
+        ...mockPostsCollectionEntries[0].data,
+        draft: false,
+        publishDate: `${year}-06-15T00:00:00.000Z`,
+      },
+    });
+
+    it("should return each year once, newest first", async () => {
+      mockGetCollection.mockResolvedValue([postIn(2024), postIn(2026), postIn(2024)] as never);
+
+      expect(await getPostYears()).toEqual([2026, 2024]);
+    });
+
+    it("should return no years when there are no posts", async () => {
+      mockGetCollection.mockResolvedValue([] as never);
+
+      expect(await getPostYears()).toEqual([]);
+    });
+  });
+
+  describe("getPostsYearUrl", () => {
+    it("should keep the latest year on the main posts URL", () => {
+      expect(getPostsYearUrl(2026, 2026)).toBe("/posts/");
+    });
+
+    it("should give older years their own URL", () => {
+      expect(getPostsYearUrl(2025, 2026)).toBe("/posts/2025/");
     });
   });
 });

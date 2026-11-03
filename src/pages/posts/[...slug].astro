@@ -5,7 +5,7 @@ import TableOfContents from "@/components/table-of-contents.astro";
 import EtiquetteIcon from "@/icons/etiquette.svg?raw";
 import BaseLayout from "@/layouts/base-layout.astro";
 import { siteConfig } from "@/site.config";
-import { getAllPosts } from "@/utils/post";
+import { getAllPosts, getPostsYearUrl, getPostYears } from "@/utils/post";
 import "@/styles/components/post.css";
 
 export async function getStaticPaths() {
@@ -25,6 +25,8 @@ const formattedDate: string = new Date(publishDate).toLocaleString(siteConfig.lo
 });
 
 const postUrl = new URL(`/posts/${post.data.slug}/`, siteConfig.siteUrl);
+const [latestYear] = await getPostYears();
+const backUrl = getPostsYearUrl(new Date(publishDate).getFullYear(), latestYear);
 ---
 
 <BaseLayout
@@ -40,7 +42,7 @@ const postUrl = new URL(`/posts/${post.data.slug}/`, siteConfig.siteUrl);
 >
   <header class="mb-8" data-pagefind-ignore>
     <a
-      href="/posts"
+      href={backUrl}
       class="inline-flex items-center hover:underline mb-4 hover:text-gray-200 transition-colors duration-200"
     >
       &larr; Back to Posts
