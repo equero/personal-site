@@ -1,0 +1,109 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TagsList from "@/components/tags-list.astro";
+import RssIcon from "@/icons/rss.svg";
+import BaseLayout from "@/layouts/base-layout.astro";
+import { siteConfig } from "@/site.config";
+import { formatPostDate } from "@/utils/date";
+import { getPostsYearUrl } from "@/utils/post";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+  year?: number;
+  years: number[];
+}
+
+const { posts, year, years } = Astro.props;
+const [latestYear] = years;
+const titleSuffix = year && year !== latestYear ? ` · ${year}` : "";
+---
+
+<BaseLayout
+  title={`Posts${titleSuffix} · ${siteConfig.siteTitle}`}
+  description={`Explore all blog posts by ${siteConfig.authorName}, covering topics in web development, programming, and technology insights.`}
+>
+  <div class="flex flex-col gap-y-10 sm:flex-row sm:gap-y-0 sm:gap-x-12">
+    <section class="flex-1">
+      <header class="mb-8">
+        <div
+          class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
+        >
+          <h1 class="text-xl font-medium secondary">Posts</h1>
+          <a
+            href="/posts/rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-yellow-400 dark:hover:text-yellow-400 transition-colors duration-200"
+            title="Subscribe to RSS feed"
+            aria-label="Subscribe to RSS feed"
+          >
+            <RssIcon class="w-5 h-5" />
+            <span>RSS</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="posts-list">
+        {
+          posts.length > 0 ? (
+            <>
+              <nav class="mb-5" aria-label="Posts by year">
+                <ul class="flex flex-wrap items-end gap-x-1 border-b border-gray-700 text-sm font-medium">
+                  {years.map((value) => (
+                    <li>
+                      <a
+                        class:list={[
+                          "block rounded-t-md border px-3 transition-colors duration-200",
+                          value === year
+                            ? "relative -mb-px border-gray-700 border-b-[rgb(var(--bg))] bg-[rgb(var(--bg))] py-1.5 text-yellow-400"
+                            : "border-gray-800 border-b-0 bg-gray-800/50 py-1 text-gray-400 hover:text-yellow-400",
+                        ]}
+                        aria-current={value === year ? "page" : undefined}
+                        data-astro-prefetch
+                        href={getPostsYearUrl(value, latestYear)}
+                      >
+                        {value}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <ul class="space-y-4">
+                {posts.map((post) => (
+                  <li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+                    <time
+                      datetime={post.data.publishDate}
+                      class="min-w-[120px] text-gray-600 dark:text-gray-400 text-xs pt-1"
+                    >
+                      {formatPostDate(post.data.publishDate)}
+                    </time>
+                    <div>
+                      <a
+                        class="underline-offset-2 transition-colors duration-200 hover:text-gray-100 hover:underline text-xs"
+                        data-astro-prefetch
+                        href={`/posts/${post.data.slug}/`}
+                      >
+                        {post.data.title}
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <div class="text-center py-12">
+              <p class="text-gray-400 text-lg">No posts published yet.</p>
+              <p class="text-gray-500 text-sm mt-2">
+                Check back soon for new content!
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </section>
+
+    <aside class="flex-none w-full sm:w-44 mt-10">
+      <TagsList />
+    </aside>
+  </div>
+</BaseLayout>

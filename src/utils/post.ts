@@ -136,3 +136,22 @@ export async function getPostsGroupedByYear(
   const posts = await getAllPosts(true, includeDrafts);
   return groupPostsByYear(posts);
 }
+
+export async function getPostYears(includeDrafts = false): Promise<number[]> {
+  const postsByYear = await getPostsGroupedByYear(includeDrafts);
+  return Object.keys(postsByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
+}
+
+/**
+ * Builds the URL of a year's posts list. The latest year lives at /posts/ so the
+ * main URL never changes.
+ *
+ * @example
+ * getPostsYearUrl(2026, 2026); // "/posts/"
+ * getPostsYearUrl(2025, 2026); // "/posts/2025/"
+ */
+export function getPostsYearUrl(year: number, latestYear: number | undefined): string {
+  return year === latestYear ? "/posts/" : `/posts/${year}/`;
+}

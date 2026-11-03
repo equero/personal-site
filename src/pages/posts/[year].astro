@@ -1,0 +1,19 @@
+---
+import PostsIndex from "@/components/posts-index.astro";
+import { getPostsGroupedByYear, getPostYears } from "@/utils/post";
+
+export async function getStaticPaths() {
+  const postsByYear = await getPostsGroupedByYear();
+  const years = await getPostYears();
+
+  // The latest year is served by /posts/, so only older years get a route here.
+  return years.slice(1).map((year) => ({
+    params: { year: String(year) },
+    props: { posts: postsByYear[year], year, years },
+  }));
+}
+
+const { posts, year, years } = Astro.props;
+---
+
+<PostsIndex posts={posts} year={year} years={years} />
