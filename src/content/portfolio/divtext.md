@@ -10,8 +10,12 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 4
-version: "1.3.0"
+version: "1.3.1"
 changelog:
+  - version: "1.3.1"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The package now lists Enrique Quero as its author"
   - version: "1.3.0"
     date: "2026-11-25T00:00:00.000Z"
     changes:

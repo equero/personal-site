@@ -10,8 +10,12 @@ demo: "https://www.kickcaps.com"
 featured: false
 status: "wip"
 order: 6
-version: "0.3.29"
+version: "0.3.30"
 changelog:
+  - version: "0.3.30"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The package now lists Enrique Quero as its author"
   - version: "0.3.29"
     date: "2026-11-25T00:00:00.000Z"
     changes:
