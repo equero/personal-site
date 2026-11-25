@@ -10,8 +10,23 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 5
-version: "0.2.3"
+version: "0.3.0"
 changelog:
+  - version: "0.3.0"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Built with TypeScript 7, the new native compiler; the published code is unchanged"
+  - version: "0.2.5"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "Regenerated the Custom Elements Manifest so it matches the new site-footer API"
+  - version: "0.2.4"
+    date: "2026-10-13T00:00:00.000Z"
+    changes:
+      - "Moved to the @equerodev/parley package on npm"
+      - "site-footer no longer ships any text of its own: the name links only when href is set, the copyright line is a template with a neutral default, and the tagline hides while empty"
+      - "The hover reveal is now opt-in with reveal=\"hover\"; CSS parts and a --hover-background property were added"
+      - "Importing parley on the server no longer throws"
   - version: "0.2.3"
     date: "2026-07-02T00:00:00.000Z"
     changes:

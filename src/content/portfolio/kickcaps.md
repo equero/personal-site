@@ -10,8 +10,17 @@ demo: "https://www.kickcaps.com"
 featured: false
 status: "wip"
 order: 6
-version: "0.3.28"
+version: "0.3.30"
 changelog:
+  - version: "0.3.30"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The package now lists Enrique Quero as its author"
+  - version: "0.3.29"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Updated Next.js, React, Radix UI and the pixi.js board renderer to their latest versions"
+      - "The physics engine stays on its current version, so recorded games keep replaying exactly"
   - version: "0.3.28"
     date: "2026-10-13T00:00:00.000Z"
     changes:

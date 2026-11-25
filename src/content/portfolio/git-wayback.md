@@ -12,8 +12,26 @@ licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 status: "wip"
 order: 2
-version: "0.9.1"
+version: "0.10.0"
 changelog:
+  - version: "0.10.0"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Fixed releases failing to deploy since the component library moved to a new npm name; 0.9.2 never went live because of it"
+      - "Fullscreen now opens a native dialog: Esc closes it, keyboard focus stays inside, and closing returns you to the same scroll position"
+      - "Timeline segments, play/pause and remove buttons now have names screen readers can read, and the current snapshot is announced"
+      - "Small buttons got larger touch targets, especially on touch screens"
+      - "Zoom and slide effects respect the system's reduced motion setting; the loading spinner slows down instead of stopping"
+      - "Keyboard focus no longer hides under the sticky header"
+      - "The search box is a real search field and Esc closes its suggestion list"
+      - "The footer now shows Enrique Quero, linking to equero.dev"
+      - "Upgraded to Nuxt 4, Vitest 5, drizzle-orm 0.45 and the Neon 1.x database driver"
+      - "Added the missing database migration behind the evolution cache, which had been failing since 0.7.41"
+  - version: "0.9.2"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The repository search shows a clear focus ring for keyboard users and has a proper label for screen readers"
+      - "The page fills the real visible height on phones, where the address bar comes and goes"
   - version: "0.9.1"
     date: "2026-10-12T00:00:00.000Z"
     changes:

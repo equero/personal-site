@@ -9,8 +9,22 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 3
-version: "0.4.2"
+version: "0.5.0"
 changelog:
+  - version: "0.5.0"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The site moved to Astro 7, Vite 8 and TypeScript 6, with marked 18 and shiki 4 for the rendered files; every page renders the same content as before"
+      - "Biome 2 replaces Biome 1 for linting, now also checking the Tailwind CSS syntax"
+  - version: "0.4.4"
+    date: "2026-11-24T00:00:00.000Z"
+    changes:
+      - "Claude Code settings enable Chrome's Modern Web Guidance plugin, with a permission for its npx command only"
+  - version: "0.4.3"
+    date: "2026-10-31T00:00:00.000Z"
+    changes:
+      - "Added a lazygit config in Catppuccin Mocha"
+      - "The global CLAUDE.md is no longer tracked, since it holds private details"
   - version: "0.4.2"
     date: "2026-10-13T00:00:00.000Z"
     changes:

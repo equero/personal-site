@@ -10,8 +10,16 @@ licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 status: "wip"
 order: 7
-version: "0.1.1"
+version: "0.1.3"
 changelog:
+  - version: "0.1.3"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The package author is now Enrique Quero, and the repository, issue and clone links point to github.com/equero"
+  - version: "0.1.2"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Updated the development tools (Biome 2.6); the app is unchanged"
   - version: "0.1.1"
     date: "2026-10-13T00:00:00.000Z"
     changes:

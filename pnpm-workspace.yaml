@@ -1,0 +1,7 @@
+# @napi-rs/wasm-runtime accepts the @emnapi 2.0 betas as peers, and pnpm
+# resolved @astrojs/check to @emnapi/runtime 2.0.0-beta.2, which breaks
+# `astro check` ("this.bridge.setLastError is not a function"). Stay on 1.x
+# until 2.0 is stable.
+overrides:
+  "@emnapi/core": "^1.11.3"
+  "@emnapi/runtime": "^1.11.3"

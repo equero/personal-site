@@ -10,8 +10,17 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 4
-version: "1.2.0"
+version: "1.3.1"
 changelog:
+  - version: "1.3.1"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "The package now lists Enrique Quero as its author"
+  - version: "1.3.0"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Moved to TypeScript 7, the new native compiler, for the type check that runs before every build"
+      - "Updated Vite, Tailwind CSS and the shiki syntax highlighter"
   - version: "1.2.0"
     date: "2026-10-27T00:00:00.000Z"
     changes:
