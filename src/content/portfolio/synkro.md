@@ -10,8 +10,12 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: false
 order: 8
-version: "0.2.2"
+version: "0.2.3"
 changelog:
+  - version: "0.2.3"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Updated the development tools (Biome 2.6); the published CLI is unchanged"
   - version: "0.2.2"
     date: "2026-10-12T00:00:00.000Z"
     changes:
