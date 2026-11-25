@@ -11,8 +11,14 @@ license: "GPL-3.0"
 licenseUrl: "https://www.gnu.org/licenses/gpl-3.0.html"
 featured: true
 order: 1
-version: "1.8.1"
+version: "1.8.2"
 changelog:
+  - version: "1.8.2"
+    date: "2026-11-25T00:00:00.000Z"
+    changes:
+      - "Published a blog post on Chrome's Modern Web Guidance skill for AI coding agents"
+      - "Portfolio changelogs updated for Parley, Synkro, Springtail, DivText, Dotfiles, KickCaps and Git Wayback"
+      - "Dependencies updated, including Astro 7.4, Tailwind CSS 4.3, Pagefind 1.6 and Vitest 5.1"
   - version: "1.8.1"
     date: "2026-11-03T00:00:00.000Z"
     changes:
